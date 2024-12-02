@@ -34,7 +34,8 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
     @Autowired
     private RefreshTokenService refreshTokenService;
-
+    @Autowired
+    private UserService userService;
 
 
     @PostMapping("/register")
@@ -80,7 +81,7 @@ public class AuthController {
 
         // Get user ID and find user by ID
         long userId = refreshToken.getUserId();
-        User user = service.findById(userId);
+        User user = userService.findById(userId);
 
         if (user == null) {
             throw new TokenRefreshException(requestRefreshToken, "User not found.");

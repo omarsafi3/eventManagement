@@ -2,44 +2,43 @@ package org.example.eventmanagement.entity;
 
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import jakarta.xml.bind.annotation.XmlTransient;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.eventmanagement.config.DateAdapter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Getter
-@Setter
+
 public class User implements UserDetails {
 
     private Long id;
-
     private String fullName;
-
     private String email;
-
     private String password;
-
     private String roles;
 
+    // Use JAXB Date adapter to handle Date formatting
     private Date createdAt;
-
     private Date updatedAt;
 
     private Collection<? extends GrantedAuthority> authorities;
 
+    // Constructor with fields
     public User(String email, String password, String roles) {
         this.email = email;
         this.password = password;
         this.roles = roles;
-        this.authorities =Arrays.stream(roles.split(","))
+        this.authorities = Arrays.stream(roles.split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
-
     }
+
     public User() {}
 
     public User(User user) {
@@ -51,9 +50,7 @@ public class User implements UserDetails {
         this.fullName = user.getFullName();
         this.createdAt = user.getCreatedAt();
         this.updatedAt = user.getUpdatedAt();
-
     }
-
 
     @XmlAttribute
     public Long getId() {
@@ -82,7 +79,7 @@ public class User implements UserDetails {
         this.email = email;
     }
 
-    @XmlTransient // Exclude from XML for security reasons
+    @XmlElement // Exclude password from XML
     public String getPassword() {
         return password;
     }
@@ -101,6 +98,7 @@ public class User implements UserDetails {
     }
 
     @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class) // Adapter for Date fields
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -110,6 +108,7 @@ public class User implements UserDetails {
     }
 
     @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class) // Adapter for Date fields
     public Date getUpdatedAt() {
         return updatedAt;
     }
@@ -118,13 +117,10 @@ public class User implements UserDetails {
         this.updatedAt = updatedAt;
     }
 
-    // Custom behavior for authorities
     @XmlTransient
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.stream(roles.split(","))
-                .map(SimpleGrantedAuthority::new)
-                .collect(Collectors.toList());
+        return authorities;
     }
 
     @XmlTransient

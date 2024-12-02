@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<userListWrapper>
+    <user id="3">
+        <email>john.doe@example.com</email>
+        <fullName>John</fullName>
+        <password>$2a$10$tyQphi84NdlXrvsq8iSyMe50bRQoxOWCYRF.7nrh5lZt3mKMZN01S</password>
+    </user>
+</userListWrapper>

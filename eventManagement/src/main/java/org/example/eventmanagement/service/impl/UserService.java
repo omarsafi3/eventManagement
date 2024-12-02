@@ -41,6 +41,10 @@ public class UserService implements UserDetailsService {
         return "User Added Successfully";
     }
 
+    public User findById(Long id) {
+        return repository.findById(id);
+    }
+
     public List<User> allUsers() {
         return new ArrayList<>(repository.findAll());
     }

@@ -4,13 +4,14 @@ import org.example.eventmanagement.entity.RefreshToken;
 
 import jakarta.xml.bind.*;
 import org.example.eventmanagement.entity.User;
+import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Repository
 public class RefreshTokenRepository {
     private final File file = new File("refreshTokens.xml");
 
@@ -19,6 +20,31 @@ public class RefreshTokenRepository {
         tokens.add(token);
         writeToFile(tokens);
         return token;
+    }
+
+    public Long deleteByUser(User user) {
+        List<RefreshToken> tokens = findAll();
+        // Filter out tokens that belong to the given user
+        List<RefreshToken> updatedTokens = tokens.stream()
+                .filter(token -> token.getUserId() != user.getId())
+                .collect(Collectors.toList());
+        writeToFile(updatedTokens);
+        return user.getId();// Save the updated list back to the file
+    }
+
+    public void deleteByToken(String token) {
+        List<RefreshToken> tokens = findAll();
+        // Filter out tokens that do not have the given token
+        List<RefreshToken> updatedTokens = tokens.stream()
+                .filter(tok -> !tok.getToken().equals(token))
+                .collect(Collectors.toList());
+        writeToFile(updatedTokens); // Save the updated list back to the file
+    }
+
+    public void delete(RefreshToken token) {
+        List<RefreshToken> tokens = findAll();
+        tokens.remove(token);
+        writeToFile(tokens);
     }
 
     public List<RefreshToken> findAll() {

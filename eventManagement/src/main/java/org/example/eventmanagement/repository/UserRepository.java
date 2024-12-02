@@ -4,11 +4,12 @@ import jakarta.xml.bind.*;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import org.example.eventmanagement.entity.User;
+import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class UserRepository {
 
     private static final String FILE_PATH = "users.xml";
@@ -51,9 +52,11 @@ public class UserRepository {
         try {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             UserListWrapper wrapper = (UserListWrapper) unmarshaller.unmarshal(file);
-            return wrapper.getUsers();
+            return wrapper != null ? wrapper.getUsers() : new ArrayList<>();
         } catch (JAXBException e) {
-            throw new RuntimeException("Error reading users from XML", e);
+            // Log error and return an empty list in case of any error
+            System.out.println("Error reading users from XML. Returning empty list.");
+            return new ArrayList<>();
         }
     }
 
@@ -61,7 +64,10 @@ public class UserRepository {
 
 
     public void save(User user) {
-        List<User> users = findAll();
+        List<User> users = findAll();  // Should never return null due to above changes
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         users.add(user);
         saveAll(users);
     }
@@ -88,8 +94,14 @@ public class UserRepository {
 
     private void saveAll(List<User> users) {
         try {
+            // If users is null, initialize it to an empty list
+            if (users == null) {
+                users = new ArrayList<>();
+            }
+
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            // Marshal the list into the XML file
             marshaller.marshal(new UserListWrapper(users), file);
         } catch (JAXBException e) {
             throw new RuntimeException("Error saving users to XML", e);
