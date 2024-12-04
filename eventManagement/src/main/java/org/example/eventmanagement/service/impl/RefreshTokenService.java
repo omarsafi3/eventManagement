@@ -30,27 +30,32 @@ public class RefreshTokenService {
     }
 
     public RefreshToken createRefreshToken(Long userId) {
-        refreshTokenRepository.deleteByUserId(userId);
+        // Ensure user exists before creating a token
+        var user = userRepository.findById(userId);
+
+        // Delete any existing tokens for this user
+        refreshTokenRepository.deleteByUserId(user.getId());
+
+        // Create a new refresh token
         RefreshToken refreshToken = new RefreshToken();
-        refreshToken.setUserId(userRepository.findById(userId).getId());
+        refreshToken.setUserId(user.getId());
         refreshToken.setExpiryDate(Instant.now().plusMillis(refreshTokenDurationMs));
         refreshToken.setToken(UUID.randomUUID().toString());
-        refreshToken = refreshTokenRepository.save(refreshToken);
-        return refreshToken;
+        return refreshTokenRepository.save(refreshToken);
     }
 
     public RefreshToken verifyExpiration(RefreshToken token) {
-        if (token.getExpiryDate().compareTo(Instant.now()) < 0) {
-            refreshTokenRepository.delete(token);
-            throw new TokenRefreshException(token.getToken(), "Refresh token was expired. Please make a new signin request");
+        if (token.getExpiryDate().isBefore(Instant.now())) {
+            refreshTokenRepository.deleteByToken(token.getToken());
+            throw new TokenRefreshException(token.getToken(), "Refresh token was expired. Please make a new signin request.");
         }
-
         return token;
     }
 
     @Transactional
     public Long deleteByUserId(Long userId) {
-        return refreshTokenRepository.deleteByUser(userRepository.findById(userId));
+        var user = userRepository.findById(userId);
+        return refreshTokenRepository.deleteByUser(user);
     }
 
     @Transactional

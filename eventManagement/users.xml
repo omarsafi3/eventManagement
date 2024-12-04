@@ -5,4 +5,15 @@
         <fullName>John</fullName>
         <password>$2a$10$tyQphi84NdlXrvsq8iSyMe50bRQoxOWCYRF.7nrh5lZt3mKMZN01S</password>
     </user>
+    <user id="5">
+        <email>safiomar@gmail.com</email>
+        <fullName>Omar Safi</fullName>
+        <password>$2a$10$5HJdOkOHv.wWMuvNvWzbzuGWFswA6aNh7PkZvvoy3sLqxqNMOw03m</password>
+    </user>
+    <user id="10">
+        <email>test@gmail.com</email>
+        <fullName>test</fullName>
+        <password>$2a$10$CONwcnpm0hcbmrCTVkGMOOa0EB9wPtCjxQmxWm/I4aI3hjiJcmzV.</password>
+        <roles>ADMIN</roles>
+    </user>
 </userListWrapper>

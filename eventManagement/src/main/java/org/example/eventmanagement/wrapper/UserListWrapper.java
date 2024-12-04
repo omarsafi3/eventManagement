@@ -1,6 +1,8 @@
-package org.example.eventmanagement.entity;
+package org.example.eventmanagement.wrapper;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import org.example.eventmanagement.entity.User;
+
 import java.util.List;
 
 @XmlRootElement
