@@ -36,7 +36,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http, AuthenticationProvider authenticationProvider) throws Exception {
         return http
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/register","/api/v1/auth/refreshToken", "/api/v1/public/**").permitAll()
+                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/register","/api/v1/auth/refreshToken", "/api/v1/auth/me", "/api/v1/public/**").permitAll()
                         .requestMatchers("/api/v1/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/api/v1/user/**").hasAnyAuthority("USER","ADMIN")
                         .anyRequest().hasAuthority("ADMIN")
