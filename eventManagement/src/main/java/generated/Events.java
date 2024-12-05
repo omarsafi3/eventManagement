@@ -16,6 +16,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+//This is a wrapper class not to be confused with the class Event
 
 /**
  * <p>Classe Java pour anonymous complex type.
