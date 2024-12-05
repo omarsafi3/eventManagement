@@ -1,0 +1,179 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:version="2.1">
+
+    <!-- Annotation to specify JAXB package -->
+    <xs:annotation>
+        <xs:appinfo>
+            <jaxb:schemaBindings>
+                <jaxb:package name="guru.springframework.domain"/>
+            </jaxb:schemaBindings>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <!-- Category definition -->
+    <xs:complexType name="Category">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Room definition -->
+    <xs:complexType name="Room">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+            <xs:element name="capacity" type="xs:double"/>
+            <xs:element name="hourlyRate" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Material definition -->
+    <xs:complexType name="Material">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="quantity" type="xs:int"/>
+            <xs:element name="hourlyRate" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Registration definition -->
+    <xs:complexType name="Registration">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+            <xs:element name="registrationDate" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Participant definition -->
+    <xs:complexType name="Participant">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+            <xs:element name="totalPaid" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Staff definition -->
+    <xs:complexType name="Staff">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+            <xs:element name="role" type="xs:string"/>
+            <xs:element name="hourlyRate" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- EventStaff definition -->
+    <xs:complexType name="EventStaff">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- EventMaterial definition -->
+    <xs:complexType name="EventMaterial">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Event definition -->
+    <xs:complexType name="Event">
+        <xs:sequence>
+            <xs:element name="id" type="xs:double"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="startTime" type="xs:dateTime"/>
+            <xs:element name="endTime" type="xs:dateTime"/>
+            <xs:element name="ticketFee" type="xs:double"/>
+            <xs:element name="maxAttendees" type="xs:int"/>
+            <xs:element name="category" type="Category"/>
+            <xs:element name="room" type="Room"/>
+            <xs:element name="eventMaterial" type="EventMaterial"/>
+            <xs:element name="registration" type="Registration"/>
+            <xs:element name="eventStaff" type="EventStaff"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Root element for events -->
+    <xs:element name="events">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="event" type="Event" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <!-- Define primary keys -->
+        <xs:key name="categoryKey">
+            <xs:selector xpath="Category"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="roomKey">
+            <xs:selector xpath="Room"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="materialKey">
+            <xs:selector xpath="Material"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="registrationKey">
+            <xs:selector xpath="Registration"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="participantKey">
+            <xs:selector xpath="Participant"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="staffKey">
+            <xs:selector xpath="Staff"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="eventStaffKey">
+            <xs:selector xpath="EventStaff"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="eventMaterialKey">
+            <xs:selector xpath="EventMaterial"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="eventKey">
+            <xs:selector xpath="Event"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <!-- Define foreign keys -->
+        <xs:keyref name="eventCategoryKeyRef" refer="categoryKey">
+            <xs:selector xpath="Event"/>
+            <xs:field xpath="category/id"/>
+        </xs:keyref>
+
+        <xs:keyref name="eventRoomKeyRef" refer="roomKey">
+            <xs:selector xpath="Event"/>
+            <xs:field xpath="room/id"/>
+        </xs:keyref>
+
+        <xs:keyref name="eventMaterialKeyRef" refer="materialKey">
+            <xs:selector xpath="Event"/>
+            <xs:field xpath="eventMaterial/id"/>
+        </xs:keyref>
+
+        <xs:keyref name="eventRegistrationKeyRef" refer="registrationKey">
+            <xs:selector xpath="Event"/>
+            <xs:field xpath="registration/id"/>
+        </xs:keyref>
+
+        <xs:keyref name="eventStaffKeyRef" refer="staffKey">
+            <xs:selector xpath="Event"/>
+            <xs:field xpath="eventStaff/id"/>
+        </xs:keyref>
+    </xs:element>
+
+</xs:schema>

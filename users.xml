@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<userListWrapper>
+    <user id="9">
+        <email>fatma@email.com</email>
+        <fullName>fatmaRekik</fullName>
+        <password>$2a$10$ktskIj7E9sS8Y74RqFu9suce.0l8Xzh6i1JBBr1v52Owx.vSboJXO</password>
+        <roles>ADMIN</roles>
+    </user>
+</userListWrapper>
