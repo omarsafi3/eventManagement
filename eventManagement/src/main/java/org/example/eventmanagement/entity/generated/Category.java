@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.05 à 07:17:42 PM GMT+01:00 
+// Généré le : 2024.12.06 à 10:09:20 PM GMT+01:00 
 //
 
 
@@ -10,22 +10,22 @@ package generated;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour Room complex type.
+ * <p>Classe Java pour Category complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="Room"&gt;
+ * &lt;complexType name="Category"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
- *         &lt;element name="capacity" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
- *         &lt;element name="hourlyRate" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,16 +35,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Room", propOrder = {
+@XmlType(name = "Category", propOrder = {
     "id",
-    "capacity",
-    "hourlyRate"
+    "name"
 })
-public class Room {
+public class Category {
 
     protected double id;
-    protected double capacity;
-    protected int hourlyRate;
+    @XmlElement(required = true)
+    protected String name;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -63,35 +62,27 @@ public class Room {
     }
 
     /**
-     * Obtient la valeur de la propriété capacity.
+     * Obtient la valeur de la propriété name.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public double getCapacity() {
-        return capacity;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Définit la valeur de la propriété capacity.
+     * Définit la valeur de la propriété name.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setCapacity(double value) {
-        this.capacity = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété hourlyRate.
-     * 
-     */
-    public int getHourlyRate() {
-        return hourlyRate;
-    }
-
-    /**
-     * Définit la valeur de la propriété hourlyRate.
-     * 
-     */
-    public void setHourlyRate(int value) {
-        this.hourlyRate = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
 }

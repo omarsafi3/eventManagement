@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.05 à 07:17:42 PM GMT+01:00 
+// Généré le : 2024.12.06 à 10:09:20 PM GMT+01:00 
 //
 
 
@@ -14,17 +14,18 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour Participant complex type.
+ * <p>Classe Java pour Room complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="Participant"&gt;
+ * &lt;complexType name="Room"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
- *         &lt;element name="totalPaid" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="capacity" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="hourlyRate" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -34,14 +35,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Participant", propOrder = {
+@XmlType(name = "Room", propOrder = {
     "id",
-    "totalPaid"
+    "capacity",
+    "hourlyRate"
 })
-public class Participant {
+public class Room {
 
     protected double id;
-    protected double totalPaid;
+    protected double capacity;
+    protected int hourlyRate;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -60,19 +63,35 @@ public class Participant {
     }
 
     /**
-     * Obtient la valeur de la propriété totalPaid.
+     * Obtient la valeur de la propriété capacity.
      * 
      */
-    public double getTotalPaid() {
-        return totalPaid;
+    public double getCapacity() {
+        return capacity;
     }
 
     /**
-     * Définit la valeur de la propriété totalPaid.
+     * Définit la valeur de la propriété capacity.
      * 
      */
-    public void setTotalPaid(double value) {
-        this.totalPaid = value;
+    public void setCapacity(double value) {
+        this.capacity = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété hourlyRate.
+     * 
+     */
+    public int getHourlyRate() {
+        return hourlyRate;
+    }
+
+    /**
+     * Définit la valeur de la propriété hourlyRate.
+     * 
+     */
+    public void setHourlyRate(int value) {
+        this.hourlyRate = value;
     }
 
 }

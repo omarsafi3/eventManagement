@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.05 à 07:17:42 PM GMT+01:00 
+// Généré le : 2024.12.06 à 10:09:20 PM GMT+01:00 
 //
 
 
@@ -15,18 +15,18 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour Staff complex type.
+ * <p>Classe Java pour Registration complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="Staff"&gt;
+ * &lt;complexType name="Registration"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
- *         &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="hourlyRate" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="participant" type="{}Participant"/&gt;
+ *         &lt;element name="amountPaid" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,23 +36,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Staff", propOrder = {
+@XmlType(name = "Registration", propOrder = {
     "id",
-    "role",
-    "hourlyRate"
+    "participant",
+    "amountPaid"
 })
-public class Staff {
+public class Registration {
 
-    protected double id;
+    protected long id;
     @XmlElement(required = true)
-    protected String role;
-    protected int hourlyRate;
+    protected Participant participant;
+    protected double amountPaid;
 
     /**
      * Obtient la valeur de la propriété id.
      * 
      */
-    public double getId() {
+    public long getId() {
         return id;
     }
 
@@ -60,48 +60,48 @@ public class Staff {
      * Définit la valeur de la propriété id.
      * 
      */
-    public void setId(double value) {
+    public void setId(long value) {
         this.id = value;
     }
 
     /**
-     * Obtient la valeur de la propriété role.
+     * Obtient la valeur de la propriété participant.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Participant }
      *     
      */
-    public String getRole() {
-        return role;
+    public Participant getParticipant() {
+        return participant;
     }
 
     /**
-     * Définit la valeur de la propriété role.
+     * Définit la valeur de la propriété participant.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Participant }
      *     
      */
-    public void setRole(String value) {
-        this.role = value;
+    public void setParticipant(Participant value) {
+        this.participant = value;
     }
 
     /**
-     * Obtient la valeur de la propriété hourlyRate.
+     * Obtient la valeur de la propriété amountPaid.
      * 
      */
-    public int getHourlyRate() {
-        return hourlyRate;
+    public double getAmountPaid() {
+        return amountPaid;
     }
 
     /**
-     * Définit la valeur de la propriété hourlyRate.
+     * Définit la valeur de la propriété amountPaid.
      * 
      */
-    public void setHourlyRate(int value) {
-        this.hourlyRate = value;
+    public void setAmountPaid(double value) {
+        this.amountPaid = value;
     }
 
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="3.0" xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
+Voir https://eclipse-ee4j.github.io/jaxb-ri 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2024.12.06 à 10:02:29 PM GMT+01:00 
+
+  -->
+  <jaxb:bindings scd="x-schema::">
+    <jaxb:schemaBindings map="false">
+      <jaxb:package name="org.example.eventmanagement.entity.generated"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings scd="events">
+      <jaxb:class ref="org.example.eventmanagement.entity.generated.Events"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Registration">
+      <jaxb:class ref="org.example.eventmanagement.entity.generated.Registration"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Participant">
+      <jaxb:class ref="org.example.eventmanagement.entity.generated.Participant"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~StaffMember">
+      <jaxb:class ref="org.example.eventmanagement.entity.generated.StaffMember"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Material">
+      <jaxb:class ref="org.example.eventmanagement.entity.generated.Material"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Category">
+      <jaxb:class ref="org.example.eventmanagement.entity.generated.Category"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Room">
+      <jaxb:class ref="org.example.eventmanagement.entity.generated.Room"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+</jaxb:bindings>
+

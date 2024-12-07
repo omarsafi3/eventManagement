@@ -2,12 +2,13 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.05 à 07:17:42 PM GMT+01:00 
+// Généré le : 2024.12.06 à 10:09:20 PM GMT+01:00 
 //
 
 
 package generated;
 
+import java.math.BigInteger;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -24,10 +25,10 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="hourlyRate" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *         &lt;element name="unit" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -41,21 +42,23 @@ import jakarta.xml.bind.annotation.XmlType;
     "id",
     "name",
     "quantity",
-    "hourlyRate"
+    "unit"
 })
 public class Material {
 
-    protected double id;
+    protected long id;
     @XmlElement(required = true)
     protected String name;
-    protected int quantity;
-    protected int hourlyRate;
+    @XmlElement(required = true)
+    protected BigInteger quantity;
+    @XmlElement(required = true)
+    protected String unit;
 
     /**
      * Obtient la valeur de la propriété id.
      * 
      */
-    public double getId() {
+    public long getId() {
         return id;
     }
 
@@ -63,7 +66,7 @@ public class Material {
      * Définit la valeur de la propriété id.
      * 
      */
-    public void setId(double value) {
+    public void setId(long value) {
         this.id = value;
     }
 
@@ -94,33 +97,49 @@ public class Material {
     /**
      * Obtient la valeur de la propriété quantity.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
      */
-    public int getQuantity() {
+    public BigInteger getQuantity() {
         return quantity;
     }
 
     /**
      * Définit la valeur de la propriété quantity.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
      */
-    public void setQuantity(int value) {
+    public void setQuantity(BigInteger value) {
         this.quantity = value;
     }
 
     /**
-     * Obtient la valeur de la propriété hourlyRate.
+     * Obtient la valeur de la propriété unit.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getHourlyRate() {
-        return hourlyRate;
+    public String getUnit() {
+        return unit;
     }
 
     /**
-     * Définit la valeur de la propriété hourlyRate.
+     * Définit la valeur de la propriété unit.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setHourlyRate(int value) {
-        this.hourlyRate = value;
+    public void setUnit(String value) {
+        this.unit = value;
     }
 
 }

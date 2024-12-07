@@ -97,20 +97,26 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jaxb2-maven-plugin</artifactId>
 				<version>3.1.0</version>
+
 				<executions>
 					<execution>
 						<id>xjc</id>
 						<goals>
 							<goal>xjc</goal>
 						</goals>
+
 					</execution>
 				</executions>
 				<configuration>
+
 					<sources>
 						<source>${project.basedir}/src/main/resources/event.xsd</source>
 					</sources>
-					<outputDirectory>${project.basedir}/src/main/java</outputDirectory><!-- to be changed to the location of entity -->
+					<outputDirectory>${project.basedir}/src/main/java/org/example/eventmanagement/entity</outputDirectory><!-- to be changed to the location of entity -->
 					<!-- if youd like to change the package for the generated code use <packageName></packageName> here -->
+<!--					<bindingFiles>-->
+<!--						<bindingFile>${project.basedir}/src/main/resources/bindings.xjb</bindingFile>-->
+<!--					</bindingFiles>-->
 					<clearOutputDir>false</clearOutputDir>
 				</configuration>
 			</plugin>
