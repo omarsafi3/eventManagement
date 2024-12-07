@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<materials/>
+<materials>
+    <material>
+        <id>2</id>
+        <name>hauts parleur</name>
+        <quantity>22</quantity>
+        <hourlyRate>2.0</hourlyRate>
+    </material>
+    <material>
+        <id>0</id>
+        <name>salami</name>
+        <quantity>10</quantity>
+        <hourlyRate>12.5</hourlyRate>
+    </material>
+</materials>
