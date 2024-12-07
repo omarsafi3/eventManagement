@@ -41,7 +41,7 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Category {
 
-    protected double id;
+    protected long id;
     @XmlElement(required = true)
     protected String name;
 
@@ -49,7 +49,7 @@ public class Category {
      * Obtient la valeur de la propriété id.
      * 
      */
-    public double getId() {
+    public long getId() {
         return id;
     }
 
@@ -57,7 +57,7 @@ public class Category {
      * Définit la valeur de la propriété id.
      * 
      */
-    public void setId(double value) {
+    public void setId(long value) {
         this.id = value;
     }
 

@@ -108,14 +108,14 @@
 
     <xs:complexType name="Category">
         <xs:sequence>
-            <xs:element name="id" type="xs:double"/>
+            <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="Room">
         <xs:sequence>
-            <xs:element name="id" type="xs:double"/>
+            <xs:element name="id" type="xs:long"/>
             <xs:element name="capacity" type="xs:double"/>
             <xs:element name="hourlyRate" type="xs:int"/>
         </xs:sequence>

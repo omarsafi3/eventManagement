@@ -42,7 +42,7 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Room {
 
-    protected double id;
+    protected long id;
     protected double capacity;
     protected int hourlyRate;
 
@@ -58,7 +58,7 @@ public class Room {
      * Définit la valeur de la propriété id.
      * 
      */
-    public void setId(double value) {
+    public void setId(long value) {
         this.id = value;
     }
 
