@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="3.0" xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
+Voir https://eclipse-ee4j.github.io/jaxb-ri 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2024.12.07 à 07:23:52 PM GMT+01:00 
+
+  -->
+  <jaxb:bindings scd="x-schema::">
+    <jaxb:schemaBindings map="false">
+      <jaxb:package name="generated"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings scd="EventWrapper">
+      <jaxb:class ref="generated.EventWrapper"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Event">
+      <jaxb:class ref="generated.Event"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~RegistrationWrapper">
+      <jaxb:class ref="generated.RegistrationWrapper"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Registration">
+      <jaxb:class ref="generated.Registration"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~EventStaffWrapper">
+      <jaxb:class ref="generated.EventStaffWrapper"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~EventStaff">
+      <jaxb:class ref="generated.EventStaff"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~EventMaterialWrapper">
+      <jaxb:class ref="generated.EventMaterialWrapper"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~EventMaterial">
+      <jaxb:class ref="generated.EventMaterial"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Participant">
+      <jaxb:class ref="generated.Participant"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~StaffMember">
+      <jaxb:class ref="generated.StaffMember"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Material">
+      <jaxb:class ref="generated.Material"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Category">
+      <jaxb:class ref="generated.Category"/>
+    </jaxb:bindings>
+    <jaxb:bindings scd="~Room">
+      <jaxb:class ref="generated.Room"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+</jaxb:bindings>
+

@@ -46,6 +46,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/api/v1/category/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/category/**").hasAuthority("ADMIN")
                         .requestMatchers("/api/v1/material/**").hasAnyAuthority("ADMIN")
+                        .requestMatchers("/api/v1/room/**").hasAuthority("ADMIN")
                         .anyRequest().hasAuthority("ADMIN")
                 )
                 .httpBasic(withDefaults())
