@@ -44,6 +44,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/v1/category/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/v1/category/**").hasAuthority("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/category/**").hasAuthority("ADMIN")
+                        .requestMatchers("/api/v1/material/**").hasAnyAuthority("ADMIN")
                         .anyRequest().hasAuthority("ADMIN")
                 )
                 .httpBasic(withDefaults()).csrf(AbstractHttpConfigurer::disable)

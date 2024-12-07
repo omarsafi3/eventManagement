@@ -102,7 +102,7 @@
             <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="quantity" type="xs:int"/>
-            <xs:element name="unit" type="xs:string"/>
+            <xs:element name="hourlyRate" type="xs:double"/>
         </xs:sequence>
     </xs:complexType>
 

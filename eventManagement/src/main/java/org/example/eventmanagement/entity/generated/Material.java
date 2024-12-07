@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.07 à 02:22:54 PM GMT+01:00 
+// Généré le : 2024.12.07 à 06:24:20 PM GMT+01:00 
 //
 
 
@@ -27,7 +27,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="unit" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="hourlyRate" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -41,7 +41,7 @@ import jakarta.xml.bind.annotation.XmlType;
     "id",
     "name",
     "quantity",
-    "unit"
+    "hourlyRate"
 })
 public class Material {
 
@@ -49,8 +49,7 @@ public class Material {
     @XmlElement(required = true)
     protected String name;
     protected int quantity;
-    @XmlElement(required = true)
-    protected String unit;
+    protected double hourlyRate;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -109,27 +108,19 @@ public class Material {
     }
 
     /**
-     * Obtient la valeur de la propriété unit.
+     * Obtient la valeur de la propriété hourlyRate.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getUnit() {
-        return unit;
+    public double getHourlyRate() {
+        return hourlyRate;
     }
 
     /**
-     * Définit la valeur de la propriété unit.
+     * Définit la valeur de la propriété hourlyRate.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setUnit(String value) {
-        this.unit = value;
+    public void setHourlyRate(double value) {
+        this.hourlyRate = value;
     }
 
 }
