@@ -103,7 +103,7 @@ public class AuthController {
         return new ResponseEntity<>("Logged out successfully", HttpStatus.OK);
     }
 
-    @PostMapping("/me")
+    @GetMapping("/me")
     public ResponseEntity<User> authenticatedUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return new ResponseEntity<>((User) authentication.getPrincipal(), HttpStatus.OK);
