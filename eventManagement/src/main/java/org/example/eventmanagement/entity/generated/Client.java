@@ -15,20 +15,20 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour Room complex type.
+ * <p>Classe Java pour Client complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="Room"&gt;
+ * &lt;complexType name="Client"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="surface" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
- *         &lt;element name="capacity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="hourlyRate" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="phoneNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,21 +38,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Room", propOrder = {
+@XmlType(name = "Client", propOrder = {
     "id",
     "name",
-    "surface",
-    "capacity",
-    "hourlyRate"
+    "phoneNumber",
+    "email",
+    "address"
 })
-public class Room {
+public class Client {
 
     protected long id;
     @XmlElement(required = true)
     protected String name;
-    protected double surface;
-    protected int capacity;
-    protected double hourlyRate;
+    protected int phoneNumber;
+    @XmlElement(required = true)
+    protected String email;
+    @XmlElement(required = true)
+    protected String address;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -95,51 +97,67 @@ public class Room {
     }
 
     /**
-     * Obtient la valeur de la propriété surface.
+     * Obtient la valeur de la propriété phoneNumber.
      * 
      */
-    public double getSurface() {
-        return surface;
+    public int getPhoneNumber() {
+        return phoneNumber;
     }
 
     /**
-     * Définit la valeur de la propriété surface.
+     * Définit la valeur de la propriété phoneNumber.
      * 
      */
-    public void setSurface(double value) {
-        this.surface = value;
+    public void setPhoneNumber(int value) {
+        this.phoneNumber = value;
     }
 
     /**
-     * Obtient la valeur de la propriété capacity.
+     * Obtient la valeur de la propriété email.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getCapacity() {
-        return capacity;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * Définit la valeur de la propriété capacity.
+     * Définit la valeur de la propriété email.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setCapacity(int value) {
-        this.capacity = value;
+    public void setEmail(String value) {
+        this.email = value;
     }
 
     /**
-     * Obtient la valeur de la propriété hourlyRate.
+     * Obtient la valeur de la propriété address.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public double getHourlyRate() {
-        return hourlyRate;
+    public String getAddress() {
+        return address;
     }
 
     /**
-     * Définit la valeur de la propriété hourlyRate.
+     * Définit la valeur de la propriété address.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setHourlyRate(double value) {
-        this.hourlyRate = value;
+    public void setAddress(String value) {
+        this.address = value;
     }
 
 }

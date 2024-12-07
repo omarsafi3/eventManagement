@@ -4,6 +4,7 @@ import jakarta.xml.bind.*;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import org.example.eventmanagement.entity.generated.Category;
+import org.example.eventmanagement.entity.generated.Room;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
@@ -47,6 +48,11 @@ public class CategoryRepository {
         if (categories == null) {
             categories = new ArrayList<>();
         }
+        long maxId = categories.stream()
+                .mapToLong(Category::getId)
+                .max()
+                .orElse(0);
+        category.setId(maxId + 1);
         categories.add(category);
         saveAll(categories);
     }

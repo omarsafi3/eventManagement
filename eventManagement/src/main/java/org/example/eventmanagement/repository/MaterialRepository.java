@@ -47,6 +47,12 @@ public class MaterialRepository {
         if (materials == null) {
             materials = new ArrayList<>();
         }
+        long maxId = materials.stream()
+                .mapToLong(Material::getId)
+                .max()
+                .orElse(0);
+        material.setId(maxId + 1);
+
         materials.add(material);
         saveAll(materials);
     }

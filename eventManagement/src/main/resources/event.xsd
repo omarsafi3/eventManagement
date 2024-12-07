@@ -24,6 +24,7 @@
             <xs:element name="id" type="xs:long"/>
             <xs:element name="title" type="xs:string"/>
             <xs:element name="category" type="Category"/>
+            <xs:element name="client" type="Client"/>
             <xs:element name="room" type="Room"/>
             <xs:element name="registrationWrapper" minOccurs="0" type="RegistrationWrapper"/>
             <xs:element name="eventStaffWrapper" minOccurs="0" type="EventStaffWrapper"/>
@@ -120,6 +121,16 @@
             <xs:element name="surface" type="xs:double"/>
             <xs:element name="capacity" type="xs:int"/>
             <xs:element name="hourlyRate" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Client">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="phoneNumber" type="xs:int"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="address" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 

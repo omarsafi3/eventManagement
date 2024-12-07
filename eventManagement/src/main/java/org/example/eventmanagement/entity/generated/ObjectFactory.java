@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.07 à 07:23:52 PM GMT+01:00 
+// Généré le : 2024.12.07 à 10:42:43 PM GMT+01:00 
 //
 
 
@@ -138,6 +138,14 @@ public class ObjectFactory {
      */
     public Room createRoom() {
         return new Room();
+    }
+
+    /**
+     * Create an instance of {@link Client }
+     * 
+     */
+    public Client createClient() {
+        return new Client();
     }
 
 }

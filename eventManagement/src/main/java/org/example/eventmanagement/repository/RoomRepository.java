@@ -47,9 +47,18 @@ public class RoomRepository {
         if (rooms == null) {
             rooms = new ArrayList<>();
         }
+
+        // unique ID for room
+        long maxId = rooms.stream()
+                .mapToLong(Room::getId)
+                .max()
+                .orElse(0);
+        room.setId(maxId + 1);
+
         rooms.add(room);
         saveAll(rooms);
     }
+
 
     public List<Room> findAll() {
         try {

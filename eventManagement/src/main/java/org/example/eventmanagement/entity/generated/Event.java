@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.07 à 07:23:52 PM GMT+01:00 
+// Généré le : 2024.12.07 à 10:42:43 PM GMT+01:00 
 //
 
 
@@ -27,6 +27,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="category" type="{}Category"/&gt;
+ *         &lt;element name="client" type="{}Client"/&gt;
  *         &lt;element name="room" type="{}Room"/&gt;
  *         &lt;element name="registrationWrapper" type="{}RegistrationWrapper" minOccurs="0"/&gt;
  *         &lt;element name="eventStaffWrapper" type="{}EventStaffWrapper" minOccurs="0"/&gt;
@@ -44,6 +45,7 @@ import jakarta.xml.bind.annotation.XmlType;
     "id",
     "title",
     "category",
+    "client",
     "room",
     "registrationWrapper",
     "eventStaffWrapper",
@@ -56,6 +58,8 @@ public class Event {
     protected String title;
     @XmlElement(required = true)
     protected Category category;
+    @XmlElement(required = true)
+    protected Client client;
     @XmlElement(required = true)
     protected Room room;
     protected RegistrationWrapper registrationWrapper;
@@ -124,6 +128,30 @@ public class Event {
      */
     public void setCategory(Category value) {
         this.category = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété client.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Client }
+     *     
+     */
+    public Client getClient() {
+        return client;
+    }
+
+    /**
+     * Définit la valeur de la propriété client.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Client }
+     *     
+     */
+    public void setClient(Client value) {
+        this.client = value;
     }
 
     /**
