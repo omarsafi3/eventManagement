@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package org.example.eventmanagement.entity.generated;
 
 import java.math.BigInteger;
 import jakarta.xml.bind.annotation.XmlAccessType;

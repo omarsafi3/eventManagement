@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package org.example.eventmanagement.entity.generated;
 
 import jakarta.xml.bind.annotation.XmlRegistry;
 
@@ -77,11 +77,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link generated.Registration }
+     * Create an instance of {@link Registration }
      * 
      */
-    public generated.Registration createRegistration() {
-        return new generated.Registration();
+    public Registration createRegistration() {
+        return new Registration();
     }
 
     /**

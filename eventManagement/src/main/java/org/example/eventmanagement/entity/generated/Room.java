@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package org.example.eventmanagement.entity.generated;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;

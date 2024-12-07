@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package org.example.eventmanagement.entity.generated;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 import jakarta.xml.bind.annotation.XmlAccessType;
