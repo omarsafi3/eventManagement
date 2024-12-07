@@ -152,4 +152,7 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+    public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+        this.authorities = authorities;
+    }
 }

@@ -8,7 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 @Repository
 public class UserRepository {
 
@@ -52,13 +56,23 @@ public class UserRepository {
         try {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             UserListWrapper wrapper = (UserListWrapper) unmarshaller.unmarshal(file);
-            return wrapper != null ? wrapper.getUsers() : new ArrayList<>();
+            List<User> users = wrapper != null ? wrapper.getUsers() : new ArrayList<>();
+
+            // Recalculate authorities for each user
+            for (User user : users) {
+                if (user.getRoles() != null) {
+                    user.setAuthorities(Arrays.stream(user.getRoles().split(","))
+                            .map(SimpleGrantedAuthority::new)
+                            .collect(Collectors.toList()));
+                }
+            }
+            return users;
         } catch (JAXBException e) {
-            // Log error and return an empty list in case of any error
             System.out.println("Error reading users from XML. Returning empty list.");
             return new ArrayList<>();
         }
     }
+
 
 
 
