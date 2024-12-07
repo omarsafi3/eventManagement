@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.06 à 10:09:20 PM GMT+01:00 
+// Généré le : 2024.12.07 à 02:22:54 PM GMT+01:00 
 //
 
 
@@ -28,7 +28,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="fullName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="email" type="{}emailType"/&gt;
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="roles" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="createdAt" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;

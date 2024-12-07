@@ -135,7 +135,7 @@ public class UserRepository {
         }
 
         @XmlElement(name = "user")
-        public List<User> getUsers() {
+        public  List<User> getUsers() {
             return users;
         }
 

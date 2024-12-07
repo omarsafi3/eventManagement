@@ -15,17 +15,18 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour Category complex type.
+ * <p>Classe Java pour EventMaterial complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="Category"&gt;
+ * &lt;complexType name="EventMaterial"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="quantityUsed" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="material" type="{}Material"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,21 +36,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Category", propOrder = {
+@XmlType(name = "EventMaterial", propOrder = {
     "id",
-    "name"
+    "quantityUsed",
+    "material"
 })
-public class Category {
+public class EventMaterial {
 
-    protected double id;
+    protected long id;
+    protected int quantityUsed;
     @XmlElement(required = true)
-    protected String name;
+    protected Material material;
 
     /**
      * Obtient la valeur de la propriété id.
      * 
      */
-    public double getId() {
+    public long getId() {
         return id;
     }
 
@@ -57,32 +60,48 @@ public class Category {
      * Définit la valeur de la propriété id.
      * 
      */
-    public void setId(double value) {
+    public void setId(long value) {
         this.id = value;
     }
 
     /**
-     * Obtient la valeur de la propriété name.
+     * Obtient la valeur de la propriété quantityUsed.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getName() {
-        return name;
+    public int getQuantityUsed() {
+        return quantityUsed;
     }
 
     /**
-     * Définit la valeur de la propriété name.
+     * Définit la valeur de la propriété quantityUsed.
+     * 
+     */
+    public void setQuantityUsed(int value) {
+        this.quantityUsed = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété material.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Material }
+     *     
+     */
+    public Material getMaterial() {
+        return material;
+    }
+
+    /**
+     * Définit la valeur de la propriété material.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Material }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setMaterial(Material value) {
+        this.material = value;
     }
 
 }

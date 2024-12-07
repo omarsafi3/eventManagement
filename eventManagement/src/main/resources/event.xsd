@@ -2,101 +2,40 @@
            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
            jaxb:version="2.1">
 
-    <!-- Annotation to specify JAXB package -->
+    <!-- Annotation to specify JAXB package. This was overridden by the config in pom.xml file. -->
     <xs:annotation>
         <xs:appinfo>
             <jaxb:schemaBindings>
-                <jaxb:package name="guru.springframework.domain"/>
+                <jaxb:package name="generated"/>
             </jaxb:schemaBindings>
         </xs:appinfo>
     </xs:annotation>
 
-    <xs:element name="events">
+    <xs:element name="EventWrapper">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="event" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="id" type="xs:long"/>
-                            <xs:element name="title" type="xs:string"/>
-                            <xs:element name="category" type="Category"/>
-                            <xs:element name="room" type="Room"/>
-                            <xs:element name="registrationWrapper" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="registration" maxOccurs="unbounded">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="id" type="xs:long"/>
-                                                    <xs:element name="participant" type="Participant"/>
-                                                    <xs:element name="amountPaid" type="xs:double"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="eventStaffWrapper" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="eventStaff" maxOccurs="unbounded">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="id" type="xs:long"/>
-                                                    <xs:element name="role" type="xs:string"/>
-                                                    <xs:element name="staffMember" type="StaffMember"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="eventMaterialWrapper" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="eventMaterial" maxOccurs="unbounded">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="id" type="xs:long"/>
-                                                    <xs:element name="quantityUsed" type="xs:integer"/>
-                                                    <xs:element name="material" type="Material"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element name="event" maxOccurs="unbounded" type="Event"/>
             </xs:sequence>
         </xs:complexType>
-
-        <xs:key name="eventKey">
-            <xs:selector xpath="event"/>
-            <xs:field xpath="id"/>
-        </xs:key>
-
-        <xs:key name="staffMemberKey">
-            <xs:selector xpath="event/eventStaffWrapper/eventStaff/staffMember"/>
-            <xs:field xpath="id"/>
-        </xs:key>
-
-        <xs:key name="materialKey">
-            <xs:selector xpath="event/eventMaterialWrapper/eventMaterial/material"/>
-            <xs:field xpath="id"/>
-        </xs:key>
-
-        <xs:keyref name="eventStaffRef" refer="staffMemberKey">
-            <xs:selector xpath="event/eventStaffWrapper/eventStaff/staffMember"/>
-            <xs:field xpath="id"/>
-        </xs:keyref>
-
-        <xs:keyref name="eventMaterialRef" refer="materialKey">
-            <xs:selector xpath="event/eventMaterialWrapper/eventMaterial/material"/>
-            <xs:field xpath="id"/>
-        </xs:keyref>
     </xs:element>
+
+    <xs:complexType name="Event">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="category" type="Category"/>
+            <xs:element name="room" type="Room"/>
+            <xs:element name="registrationWrapper" minOccurs="0" type="RegistrationWrapper"/>
+            <xs:element name="eventStaffWrapper" minOccurs="0" type="EventStaffWrapper"/>
+            <xs:element name="eventMaterialWrapper" minOccurs="0" type="EventMaterialWrapper"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RegistrationWrapper">
+        <xs:sequence>
+            <xs:element name="registration" maxOccurs="unbounded" type="Registration"/>
+        </xs:sequence>
+    </xs:complexType>
 
     <xs:complexType name="Registration">
         <xs:sequence>
@@ -106,11 +45,39 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="EventStaffWrapper">
+        <xs:sequence>
+            <xs:element name="eventStaff" maxOccurs="unbounded" type="EventStaff"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EventStaff">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="role" type="xs:string"/>
+            <xs:element name="staffMember" type="StaffMember"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EventMaterialWrapper">
+        <xs:sequence>
+            <xs:element name="eventMaterial" maxOccurs="unbounded" type="EventMaterial"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EventMaterial">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="quantityUsed" type="xs:int"/>
+            <xs:element name="material" type="Material"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="Participant">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="fullName" type="xs:string"/>
-            <xs:element name="email" type="emailType"/>
+            <xs:element name="email" type="xs:string"/> <!-- Updated to xs:string -->
             <xs:element name="password" type="xs:string"/>
             <xs:element name="roles" type="xs:string"/>
             <xs:element name="createdAt" type="xs:dateTime"/>
@@ -122,7 +89,7 @@
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="fullName" type="xs:string"/>
-            <xs:element name="email" type="emailType"/>
+            <xs:element name="email" type="xs:string"/> <!-- Updated to xs:string -->
             <xs:element name="password" type="xs:string"/>
             <xs:element name="roles" type="xs:string"/>
             <xs:element name="createdAt" type="xs:dateTime"/>
@@ -134,7 +101,7 @@
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
-            <xs:element name="quantity" type="xs:integer"/>
+            <xs:element name="quantity" type="xs:int"/>
             <xs:element name="unit" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
@@ -153,11 +120,5 @@
             <xs:element name="hourlyRate" type="xs:int"/>
         </xs:sequence>
     </xs:complexType>
-
-    <xs:simpleType name="emailType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
-        </xs:restriction>
-    </xs:simpleType>
 
 </xs:schema>

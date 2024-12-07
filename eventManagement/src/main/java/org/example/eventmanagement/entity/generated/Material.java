@@ -2,13 +2,12 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.06 à 10:09:20 PM GMT+01:00 
+// Généré le : 2024.12.07 à 02:22:54 PM GMT+01:00 
 //
 
 
 package org.example.eventmanagement.entity.generated;
 
-import java.math.BigInteger;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -27,7 +26,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="unit" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -49,8 +48,7 @@ public class Material {
     protected long id;
     @XmlElement(required = true)
     protected String name;
-    @XmlElement(required = true)
-    protected BigInteger quantity;
+    protected int quantity;
     @XmlElement(required = true)
     protected String unit;
 
@@ -97,24 +95,16 @@ public class Material {
     /**
      * Obtient la valeur de la propriété quantity.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
     /**
      * Définit la valeur de la propriété quantity.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setQuantity(BigInteger value) {
+    public void setQuantity(int value) {
         this.quantity = value;
     }
 

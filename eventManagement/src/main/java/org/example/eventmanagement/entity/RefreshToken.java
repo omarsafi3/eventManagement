@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.example.eventmanagement.config.InstantAdapter;
 
 import java.time.Instant;
+import java.util.List;
 
 @NoArgsConstructor
 @Setter
@@ -28,4 +29,25 @@ public class RefreshToken {
     @XmlElement(name = "ExpiryDate")
     @XmlJavaTypeAdapter(InstantAdapter.class)
     private Instant expiryDate;
+
+    @XmlRootElement
+    public static class UserListWrapper {
+
+        private List<User> users;
+
+        public UserListWrapper() {}
+
+        public UserListWrapper(List<User> users) {
+            this.users = users;
+        }
+
+        @XmlElement(name = "user")
+        public List<User> getUsers() {
+            return users;
+        }
+
+        public void setUsers(List<User> users) {
+            this.users = users;
+        }
+    }
 }

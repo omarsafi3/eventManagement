@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.06 à 10:09:20 PM GMT+01:00 
+// Généré le : 2024.12.07 à 02:22:54 PM GMT+01:00 
 //
 
 
@@ -37,43 +37,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Events }
+     * Create an instance of {@link EventWrapper }
      * 
      */
-    public Events createEvents() {
-        return new Events();
+    public EventWrapper createEventWrapper() {
+        return new EventWrapper();
     }
 
     /**
-     * Create an instance of {@link Events.Event }
+     * Create an instance of {@link Event }
      * 
      */
-    public Events.Event createEventsEvent() {
-        return new Events.Event();
+    public Event createEvent() {
+        return new Event();
     }
 
     /**
-     * Create an instance of {@link Events.Event.EventMaterialWrapper }
+     * Create an instance of {@link RegistrationWrapper }
      * 
      */
-    public Events.Event.EventMaterialWrapper createEventsEventEventMaterialWrapper() {
-        return new Events.Event.EventMaterialWrapper();
-    }
-
-    /**
-     * Create an instance of {@link Events.Event.EventStaffWrapper }
-     * 
-     */
-    public Events.Event.EventStaffWrapper createEventsEventEventStaffWrapper() {
-        return new Events.Event.EventStaffWrapper();
-    }
-
-    /**
-     * Create an instance of {@link Events.Event.RegistrationWrapper }
-     * 
-     */
-    public Events.Event.RegistrationWrapper createEventsEventRegistrationWrapper() {
-        return new Events.Event.RegistrationWrapper();
+    public RegistrationWrapper createRegistrationWrapper() {
+        return new RegistrationWrapper();
     }
 
     /**
@@ -82,6 +66,38 @@ public class ObjectFactory {
      */
     public Registration createRegistration() {
         return new Registration();
+    }
+
+    /**
+     * Create an instance of {@link EventStaffWrapper }
+     * 
+     */
+    public EventStaffWrapper createEventStaffWrapper() {
+        return new EventStaffWrapper();
+    }
+
+    /**
+     * Create an instance of {@link EventStaff }
+     * 
+     */
+    public EventStaff createEventStaff() {
+        return new EventStaff();
+    }
+
+    /**
+     * Create an instance of {@link EventMaterialWrapper }
+     * 
+     */
+    public EventMaterialWrapper createEventMaterialWrapper() {
+        return new EventMaterialWrapper();
+    }
+
+    /**
+     * Create an instance of {@link EventMaterial }
+     * 
+     */
+    public EventMaterial createEventMaterial() {
+        return new EventMaterial();
     }
 
     /**
@@ -122,30 +138,6 @@ public class ObjectFactory {
      */
     public Room createRoom() {
         return new Room();
-    }
-
-    /**
-     * Create an instance of {@link Events.Event.EventMaterialWrapper.EventMaterial }
-     * 
-     */
-    public Events.Event.EventMaterialWrapper.EventMaterial createEventsEventEventMaterialWrapperEventMaterial() {
-        return new Events.Event.EventMaterialWrapper.EventMaterial();
-    }
-
-    /**
-     * Create an instance of {@link Events.Event.EventStaffWrapper.EventStaff }
-     * 
-     */
-    public Events.Event.EventStaffWrapper.EventStaff createEventsEventEventStaffWrapperEventStaff() {
-        return new Events.Event.EventStaffWrapper.EventStaff();
-    }
-
-    /**
-     * Create an instance of {@link Events.Event.RegistrationWrapper.Registration }
-     * 
-     */
-    public Events.Event.RegistrationWrapper.Registration createEventsEventRegistrationWrapperRegistration() {
-        return new Events.Event.RegistrationWrapper.Registration();
     }
 
 }
