@@ -17,16 +17,16 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour EventStaffWrapper complex type.
+ * <p>Classe Java pour ScheduleWrapper complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="EventStaffWrapper"&gt;
+ * &lt;complexType name="ScheduleWrapper"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="eventStaff" type="{}EventStaff" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="schedule" type="{}Schedule" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,41 +36,41 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EventStaffWrapper", propOrder = {
-    "eventStaff"
+@XmlType(name = "ScheduleWrapper", propOrder = {
+    "schedule"
 })
-public class EventStaffWrapper {
+public class ScheduleWrapper {
 
     @XmlElement(required = true)
-    protected List<EventStaff> eventStaff;
+    protected List<Schedule> schedule;
 
     /**
-     * Gets the value of the eventStaff property.
+     * Gets the value of the schedule property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the eventStaff property.
+     * This is why there is not a <CODE>set</CODE> method for the schedule property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getEventStaff().add(newItem);
+     *    getSchedule().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link EventStaff }
+     * {@link Schedule }
      * 
      * 
      */
-    public List<EventStaff> getEventStaff() {
-        if (eventStaff == null) {
-            eventStaff = new ArrayList<EventStaff>();
+    public List<Schedule> getSchedule() {
+        if (schedule == null) {
+            schedule = new ArrayList<Schedule>();
         }
-        return this.eventStaff;
+        return this.schedule;
     }
 
 }

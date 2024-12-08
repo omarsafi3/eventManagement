@@ -1,9 +1,11 @@
 <jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-               jaxb:version="2.1">
+               jaxb:version="3.1">
     <jaxb:bindings schemaLocation="event.xsd" node="/xs:schema">
-        <jaxb:schemaBindings>
-            <jaxb:package name="org.example.eventmanagement.entity.generated"/>
-        </jaxb:schemaBindings>
+        <jaxb:bindings node="xs:complexType[@name='StaffMember']">
+            <jaxb:class name="org.example.eventmanagement.entity.generated.StaffMember">
+<!--                <jaxb:superClass name="org.example.eventmanagement.entity.User"/>-->
+            </jaxb:class>
+        </jaxb:bindings>
     </jaxb:bindings>
 </jaxb:bindings>

@@ -15,17 +15,18 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour Category complex type.
+ * <p>Classe Java pour Skill complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="Category"&gt;
+ * &lt;complexType name="Skill"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,15 +36,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Category", propOrder = {
+@XmlType(name = "Skill", propOrder = {
     "id",
-    "name"
+    "name",
+    "description"
 })
-public class Category {
+public class Skill {
 
     protected long id;
     @XmlElement(required = true)
     protected String name;
+    @XmlElement(required = true)
+    protected String description;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -83,6 +87,30 @@ public class Category {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété description.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Définit la valeur de la propriété description.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDescription(String value) {
+        this.description = value;
     }
 
 }

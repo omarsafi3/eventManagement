@@ -2,7 +2,6 @@
            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
            jaxb:version="2.1">
 
-    <!-- Annotation to specify JAXB package. This was overridden by the config in pom.xml file. -->
     <xs:annotation>
         <xs:appinfo>
             <jaxb:schemaBindings>
@@ -46,17 +45,9 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="EventStaffWrapper">
+    <xs:complexType name="Participant">
         <xs:sequence>
-            <xs:element name="eventStaff" maxOccurs="unbounded" type="EventStaff"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="EventStaff">
-        <xs:sequence>
-            <xs:element name="id" type="xs:long"/>
-            <xs:element name="role" type="xs:string"/>
-            <xs:element name="staffMember" type="StaffMember"/>
+            <xs:element name="totalPaid" type="xs:double"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -74,30 +65,6 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="Participant">
-        <xs:sequence>
-            <xs:element name="id" type="xs:long"/>
-            <xs:element name="fullName" type="xs:string"/>
-            <xs:element name="email" type="xs:string"/> <!-- Updated to xs:string -->
-            <xs:element name="password" type="xs:string"/>
-            <xs:element name="roles" type="xs:string"/>
-            <xs:element name="createdAt" type="xs:dateTime"/>
-            <xs:element name="updatedAt" type="xs:dateTime"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="StaffMember">
-        <xs:sequence>
-            <xs:element name="id" type="xs:long"/>
-            <xs:element name="fullName" type="xs:string"/>
-            <xs:element name="email" type="xs:string"/> <!-- Updated to xs:string -->
-            <xs:element name="password" type="xs:string"/>
-            <xs:element name="roles" type="xs:string"/>
-            <xs:element name="createdAt" type="xs:dateTime"/>
-            <xs:element name="updatedAt" type="xs:dateTime"/>
-        </xs:sequence>
-    </xs:complexType>
-
     <xs:complexType name="Material">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
@@ -107,20 +74,83 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="Category">
+    <xs:complexType name="EventStaffWrapper">
+        <xs:sequence>
+            <xs:element name="eventStaff" maxOccurs="unbounded" type="EventStaff"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EventStaff">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <!-- <xs:element name="eventId" type="xs:long"/>         -->
+            <xs:element name="staffMember" type="StaffMember"/>
+            <xs:element name="role" type="xs:string"/>
+            <xs:element name="startTime" type="xs:dateTime"/>
+            <xs:element name="finishTime" type="xs:dateTime"/>
+            <xs:element name="eventStaffRole" type="EventStaffRole"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EventStaffRole">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
+<!--            <xs:element name="skillWrapper" type="SkillWrapper"/>-->
         </xs:sequence>
     </xs:complexType>
+
+<!--    <xs:complexType name="SkillWrapper">-->
+<!--        <xs:sequence>-->
+<!--            <xs:element name="skill" maxOccurs="unbounded" type="Skill"/>-->
+<!--        </xs:sequence>-->
+<!--    </xs:complexType>-->
+
+    <xs:complexType name="Skill">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StaffSkillWrapper">
+        <xs:sequence>
+            <xs:element name="staffSkill" maxOccurs="unbounded" type="Skill"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StaffMember">
+        <xs:sequence>
+            <xs:element name="scheduleWrapper" type="ScheduleWrapper"/>
+            <xs:element name="staffSkillWrapper" type="StaffSkillWrapper"/>
+        </xs:sequence>
+    </xs:complexType>
+
+        <xs:complexType name="ScheduleWrapper">
+            <xs:sequence>
+                <xs:element name="schedule" maxOccurs="unbounded" type="Schedule"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="Schedule">
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="weekDay" type="xs:int"/>
+                <xs:element name="isOff" type="xs:boolean"/>
+                <xs:element name="startTime" type="xs:time"/>
+                <xs:element name="endTime" type="xs:time"/>
+                <!-- <xs:element name="staffMemberId" type="xs:long"/> -->
+            </xs:sequence>
+        </xs:complexType>
 
     <xs:complexType name="Room">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
-            <xs:element name="surface" type="xs:double"/>
             <xs:element name="capacity" type="xs:int"/>
             <xs:element name="hourlyRate" type="xs:double"/>
+            <xs:element name="surface" type="xs:double"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -131,6 +161,13 @@
             <xs:element name="phoneNumber" type="xs:int"/>
             <xs:element name="email" type="xs:string"/>
             <xs:element name="address" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Category">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 

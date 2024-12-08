@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.08 à 07:28:36 PM GMT+01:00 
+// Généré le : 2024.12.08 à 06:30:11 PM GMT+01:00 
 //
 
 
@@ -17,16 +17,16 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour EventStaffWrapper complex type.
+ * <p>Classe Java pour SkillWrapper complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="EventStaffWrapper"&gt;
+ * &lt;complexType name="SkillWrapper"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="eventStaff" type="{}EventStaff" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="skill" type="{}Skill" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,41 +36,41 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EventStaffWrapper", propOrder = {
-    "eventStaff"
+@XmlType(name = "SkillWrapper", propOrder = {
+    "skill"
 })
-public class EventStaffWrapper {
+public class SkillWrapper {
 
     @XmlElement(required = true)
-    protected List<EventStaff> eventStaff;
+    protected List<Skill> skill;
 
     /**
-     * Gets the value of the eventStaff property.
+     * Gets the value of the skill property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the eventStaff property.
+     * This is why there is not a <CODE>set</CODE> method for the skill property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getEventStaff().add(newItem);
+     *    getSkill().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link EventStaff }
+     * {@link Skill }
      * 
      * 
      */
-    public List<EventStaff> getEventStaff() {
-        if (eventStaff == null) {
-            eventStaff = new ArrayList<EventStaff>();
+    public List<Skill> getSkill() {
+        if (skill == null) {
+            skill = new ArrayList<Skill>();
         }
-        return this.eventStaff;
+        return this.skill;
     }
 
 }

@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.07 à 10:42:43 PM GMT+01:00 
+// Généré le : 2024.12.08 à 07:28:36 PM GMT+01:00 
 //
 
 
@@ -26,9 +26,9 @@ import jakarta.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="surface" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *         &lt;element name="capacity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="hourlyRate" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="surface" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -41,18 +41,18 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "Room", propOrder = {
     "id",
     "name",
-    "surface",
     "capacity",
-    "hourlyRate"
+    "hourlyRate",
+    "surface"
 })
 public class Room {
 
     protected long id;
     @XmlElement(required = true)
     protected String name;
-    protected double surface;
     protected int capacity;
     protected double hourlyRate;
+    protected double surface;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -95,22 +95,6 @@ public class Room {
     }
 
     /**
-     * Obtient la valeur de la propriété surface.
-     * 
-     */
-    public double getSurface() {
-        return surface;
-    }
-
-    /**
-     * Définit la valeur de la propriété surface.
-     * 
-     */
-    public void setSurface(double value) {
-        this.surface = value;
-    }
-
-    /**
      * Obtient la valeur de la propriété capacity.
      * 
      */
@@ -140,6 +124,22 @@ public class Room {
      */
     public void setHourlyRate(double value) {
         this.hourlyRate = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété surface.
+     * 
+     */
+    public double getSurface() {
+        return surface;
+    }
+
+    /**
+     * Définit la valeur de la propriété surface.
+     * 
+     */
+    public void setSurface(double value) {
+        this.surface = value;
     }
 
 }

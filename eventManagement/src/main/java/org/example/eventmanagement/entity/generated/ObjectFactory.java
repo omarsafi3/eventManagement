@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.07 à 10:42:43 PM GMT+01:00 
+// Généré le : 2024.12.08 à 07:28:36 PM GMT+01:00 
 //
 
 
@@ -69,19 +69,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link EventStaffWrapper }
+     * Create an instance of {@link Participant }
      * 
      */
-    public EventStaffWrapper createEventStaffWrapper() {
-        return new EventStaffWrapper();
-    }
-
-    /**
-     * Create an instance of {@link EventStaff }
-     * 
-     */
-    public EventStaff createEventStaff() {
-        return new EventStaff();
+    public Participant createParticipant() {
+        return new Participant();
     }
 
     /**
@@ -101,11 +93,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Participant }
+     * Create an instance of {@link Material }
      * 
      */
-    public Participant createParticipant() {
-        return new Participant();
+    public Material createMaterial() {
+        return new Material();
+    }
+
+    /**
+     * Create an instance of {@link EventStaffWrapper }
+     * 
+     */
+    public EventStaffWrapper createEventStaffWrapper() {
+        return new EventStaffWrapper();
+    }
+
+    /**
+     * Create an instance of {@link EventStaff }
+     * 
+     */
+    public EventStaff createEventStaff() {
+        return new EventStaff();
+    }
+
+    /**
+     * Create an instance of {@link EventStaffRole }
+     * 
+     */
+    public EventStaffRole createEventStaffRole() {
+        return new EventStaffRole();
+    }
+
+    /**
+     * Create an instance of {@link Skill }
+     * 
+     */
+    public Skill createSkill() {
+        return new Skill();
+    }
+
+    /**
+     * Create an instance of {@link StaffSkillWrapper }
+     * 
+     */
+    public StaffSkillWrapper createStaffSkillWrapper() {
+        return new StaffSkillWrapper();
     }
 
     /**
@@ -117,19 +149,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Material }
+     * Create an instance of {@link ScheduleWrapper }
      * 
      */
-    public Material createMaterial() {
-        return new Material();
+    public ScheduleWrapper createScheduleWrapper() {
+        return new ScheduleWrapper();
     }
 
     /**
-     * Create an instance of {@link Category }
+     * Create an instance of {@link Schedule }
      * 
      */
-    public Category createCategory() {
-        return new Category();
+    public Schedule createSchedule() {
+        return new Schedule();
     }
 
     /**
@@ -146,6 +178,14 @@ public class ObjectFactory {
      */
     public Client createClient() {
         return new Client();
+    }
+
+    /**
+     * Create an instance of {@link Category }
+     * 
+     */
+    public Category createCategory() {
+        return new Category();
     }
 
 }
