@@ -108,6 +108,9 @@ public class AuthController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return new ResponseEntity<>((User) authentication.getPrincipal(), HttpStatus.OK);
     }
-
+    @GetMapping("/all")
+    public ResponseEntity<?> allUsers() {
+        return new ResponseEntity<>(service.allUsers(), HttpStatus.OK);
+    }
 
 }
