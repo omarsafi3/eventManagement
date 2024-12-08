@@ -4,4 +4,8 @@
         <id>1</id>
         <name>reunion</name>
     </category>
+    <category>
+        <id>2</id>
+        <name>test</name>
+    </category>
 </categories>

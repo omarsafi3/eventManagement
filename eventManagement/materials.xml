@@ -7,9 +7,9 @@
         <hourlyRate>2.0</hourlyRate>
     </material>
     <material>
-        <id>0</id>
+        <id>3</id>
         <name>salami</name>
-        <quantity>10</quantity>
-        <hourlyRate>12.5</hourlyRate>
+        <quantity>3</quantity>
+        <hourlyRate>10.2</hourlyRate>
     </material>
 </materials>
