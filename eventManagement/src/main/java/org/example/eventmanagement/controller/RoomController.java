@@ -13,7 +13,6 @@ import java.util.List;
 public class RoomController {
 
     private final RoomService roomService;
-
     public RoomController(RoomService roomService) {
         this.roomService = roomService;
     }
@@ -79,6 +78,6 @@ public class RoomController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteRoomById(@PathVariable Long id) {
         roomService.deleteRoomById(id);
-        return new ResponseEntity<>("Room deleted successfully.", HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
