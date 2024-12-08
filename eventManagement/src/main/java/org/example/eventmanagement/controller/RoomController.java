@@ -20,9 +20,9 @@ public class RoomController {
 
     // Create a new room
     @PostMapping
-    public ResponseEntity<String> createRoom(@RequestBody Room room) {
+    public ResponseEntity<Room> createRoom(@RequestBody Room room) {
         roomService.createRoom(room);
-        return new ResponseEntity<>("Room created successfully.", HttpStatus.CREATED);
+        return new ResponseEntity<>(room, HttpStatus.CREATED);
     }
 
     // Retrieve all rooms
@@ -69,10 +69,10 @@ public class RoomController {
 
     // Update a room
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateRoom(@PathVariable Long id, @RequestBody Room updatedRoom) {
+    public ResponseEntity<Room> updateRoom(@PathVariable Long id, @RequestBody Room updatedRoom) {
         updatedRoom.setId(id); // Ensure the ID matches
-        roomService.updateRoom(updatedRoom);
-        return new ResponseEntity<>("Room updated successfully.", HttpStatus.OK);
+        Room room= roomService.updateRoom(updatedRoom);
+        return new ResponseEntity<>(room, HttpStatus.OK);
     }
 
     // Delete a room by its ID

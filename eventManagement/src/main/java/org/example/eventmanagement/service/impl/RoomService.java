@@ -18,6 +18,7 @@ public class RoomService {
 
     // Create a new room
     public void createRoom(Room room) {
+
         roomRepository.save(room);
     }
 
@@ -56,11 +57,12 @@ public class RoomService {
         return roomRepository.findByHourlyRateLessThan(hourlyRate);
     }
 
-    public void updateRoom(Room room) {
+    public Room updateRoom(Room room) {
         if (roomRepository.findById(room.getId()) == null) {
             throw new RuntimeException("Room with ID " + room.getId() + " not found");
         }
         roomRepository.update(room);
+        return room;
     }
 
 
