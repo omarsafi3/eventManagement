@@ -75,13 +75,16 @@ public class UserRepository {
 
 
 
-
-
     public void save(User user) {
         List<User> users = findAll();  // Should never return null due to above changes
         if (users == null) {
             users = new ArrayList<>();
         }
+        Long maxId = users.stream()
+                .mapToLong(User::getId)
+                .max()
+                .orElse(0);
+        user.setId(maxId + 1);
         users.add(user);
         saveAll(users);
     }
