@@ -3,6 +3,7 @@ package org.example.eventmanagement.controller;
 import org.example.eventmanagement.dto.UserDTO;
 import org.example.eventmanagement.entity.User;
 import org.example.eventmanagement.service.impl.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -19,15 +20,14 @@ import java.util.Optional;
 @RequestMapping("/api/v1/public/users")
 @RestController
 public class UserController {
-    private final UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/")
     public ResponseEntity<User> authenticatedUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return new ResponseEntity<>((User) authentication.getPrincipal(), HttpStatus.OK);
     }
+
 }

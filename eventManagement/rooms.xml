@@ -2,7 +2,7 @@
 <rooms>
     <room>
         <id>1</id>
-        <name>eleven</name>
+        <name>eleve</name>
         <surface>19.0</surface>
         <capacity>20</capacity>
         <hourlyRate>17.0</hourlyRate>
@@ -10,13 +10,6 @@
     <room>
         <id>2</id>
         <name>ahla</name>
-        <surface>0.0</surface>
-        <capacity>13</capacity>
-        <hourlyRate>12.0</hourlyRate>
-    </room>
-    <room>
-        <id>3</id>
-        <name>yoo</name>
         <surface>0.0</surface>
         <capacity>13</capacity>
         <hourlyRate>12.0</hourlyRate>
