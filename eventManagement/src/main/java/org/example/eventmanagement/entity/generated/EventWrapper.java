@@ -2,10 +2,12 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2024.12.08 à 07:28:36 PM GMT+01:00 
+// Généré le : 2024.12.12 à 09:01:23 PM GMT+01:00 
 //
 
+
 package org.example.eventmanagement.entity.generated;
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,10 @@
 package org.example.eventmanagement.service.impl;
 
 import org.example.eventmanagement.entity.generated.Material;
+//import org.example.eventmanagement.repository.MaterialRepository;
+//import org.example.eventmanagement.repository.MaterialRepository;
 import org.example.eventmanagement.repository.MaterialRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,11 +12,8 @@ import java.util.List;
 @Service
 public class MaterialService {
 
-    private final MaterialRepository repository;
-
-    public MaterialService(MaterialRepository repository) {
-        this.repository = repository;
-    }
+    @Autowired
+    private MaterialRepository repository;
 
     // Add a new material
     public String addMaterial(Material material) {
