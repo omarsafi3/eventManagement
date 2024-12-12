@@ -3,6 +3,7 @@ package org.example.eventmanagement.repository;
 import jakarta.xml.bind.*;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import org.example.eventmanagement.entity.generated.Material;
 import org.example.eventmanagement.entity.generated.StaffMember;
 import org.springframework.stereotype.Repository;
 
@@ -47,6 +48,11 @@ public class StaffMemberRepository {
         if (staffMembers == null) {
             staffMembers = new ArrayList<>();
         }
+        long maxId = staffMembers.stream()
+                .mapToLong(StaffMember::getId)
+                .max()
+                .orElse(0);
+        staffMember.setId(maxId + 1);
         staffMembers.add(staffMember);
         saveAll(staffMembers);
     }

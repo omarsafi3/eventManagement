@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rooms>
+    <room>
+        <id>1</id>
+        <name>conference room B EDIT TEST</name>
+        <surface>90.0</surface>
+        <capacity>100</capacity>
+        <hourlyRate>70.0</hourlyRate>
+    </room>
+    <room>
+        <id>2</id>
+        <name>conference room B</name>
+        <surface>90.0</surface>
+        <capacity>100</capacity>
+        <hourlyRate>70.0</hourlyRate>
+    </room>
+    <room>
+        <id>3</id>
+        <name>green space</name>
+        <surface>90.0</surface>
+        <capacity>150</capacity>
+        <hourlyRate>40.0</hourlyRate>
+    </room>
+    <room>
+        <id>4</id>
+        <name>very expensive, big room</name>
+        <surface>300.0</surface>
+        <capacity>500</capacity>
+        <hourlyRate>300.0</hourlyRate>
+    </room>
+</rooms>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<participants>
+    <participant id="1">
+        <email>ftayma@gmail.com</email>
+        <fullName>ftayma</fullName>
+        <password>123</password>
+        <roles>PARTICIPANT</roles>
+        <totalPaid>20.5</totalPaid>
+    </participant>
+</participants>

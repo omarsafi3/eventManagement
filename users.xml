@@ -6,4 +6,10 @@
         <password>$2a$10$ktskIj7E9sS8Y74RqFu9suce.0l8Xzh6i1JBBr1v52Owx.vSboJXO</password>
         <roles>ADMIN</roles>
     </user>
+    <user id="10">
+        <email>ftayma@gmail.com</email>
+        <fullName>ftayma</fullName>
+        <password>$2a$10$p7H82srbnGZP3Av9YYLCcOGsj4aC1X5sDg3vTTS2.CmM6nqR.kEEO</password>
+        <roles>ADMIN</roles>
+    </user>
 </userListWrapper>

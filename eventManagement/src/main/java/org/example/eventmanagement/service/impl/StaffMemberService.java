@@ -18,10 +18,10 @@ public class StaffMemberService {
         this.repository = repository;
     }
 
-    public String addStaffMember(StaffMember staffMember) {
+    public StaffMember addStaffMember(StaffMember staffMember) {
         // Assuming some logic to handle password encoding or other transformations if needed
         repository.save(staffMember);
-        return "Staff Member Added Successfully";
+        return staffMember;
     }
 
     public StaffMember findById(long id) {

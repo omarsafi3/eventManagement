@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<materials>
+    <material>
+        <id>2</id>
+        <name>hauts parleurs</name>
+        <quantity>22</quantity>
+        <hourlyRate>2.0</hourlyRate>
+    </material>
+</materials>
