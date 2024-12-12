@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<participants>
+    <participant id="1">
+        <email>safiomar@omar.com</email>
+        <fullName>omar</fullName>
+        <password>omar</password>
+        <roles>USER</roles>
+        <totalPaid>0.0</totalPaid>
+    </participant>
+    <participant id="2">
+        <email>test@gmail.com</email>
+        <fullName>fatma</fullName>
+        <password>test</password>
+        <roles>USER</roles>
+        <totalPaid>0.0</totalPaid>
+    </participant>
+    <participant id="3">
+        <email>omar</email>
+        <fullName>aha</fullName>
+        <password>omar</password>
+        <roles>USER</roles>
+        <totalPaid>0.0</totalPaid>
+    </participant>
+    <participant id="4">
+        <email>a</email>
+        <fullName>a</fullName>
+        <password>a</password>
+        <roles>USER</roles>
+        <totalPaid>0.0</totalPaid>
+    </participant>
+    <participant id="5">
+        <email>a</email>
+        <fullName>a</fullName>
+        <password>a</password>
+        <roles>USER</roles>
+        <totalPaid>0.0</totalPaid>
+    </participant>
+</participants>
