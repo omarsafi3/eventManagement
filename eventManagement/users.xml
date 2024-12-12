@@ -16,4 +16,10 @@
         <password>$2a$10$CONwcnpm0hcbmrCTVkGMOOa0EB9wPtCjxQmxWm/I4aI3hjiJcmzV.</password>
         <roles>ADMIN</roles>
     </user>
+    <user id="11">
+        <email>a</email>
+        <fullName>a</fullName>
+        <password>$2a$10$SnZKgevcPE6EVcxdJsZOYe8Dtsn/lGFQLY6VqSj2S2QLfME0Z7g3m</password>
+        <roles>USER</roles>
+    </user>
 </userListWrapper>
