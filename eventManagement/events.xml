@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<events>
+    <event>
+        <id>1</id>
+    </event>
+    <event>
+        <id>2</id>
+    </event>
+    <event>
+        <id>3</id>
+    </event>
+    <event>
+        <id>4</id>
+    </event>
+    <event>
+        <id>5</id>
+    </event>
+    <event>
+        <id>6</id>
+    </event>
+</events>

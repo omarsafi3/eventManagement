@@ -10,11 +10,18 @@ package org.example.eventmanagement.entity.generated;
 
 
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.example.eventmanagement.config.TimeAdapter;
+
+import java.sql.Time;
+import java.util.Date;
 
 
 /**
@@ -71,13 +78,17 @@ public class Event {
     protected String description;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar date;
+    protected Date date;
     @XmlElement(required = true)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar startTime;
+    @JsonSerialize(using = TimeAdapter.TimeSerializer.class)
+    @JsonDeserialize(using = TimeAdapter.TimeDeserializer.class)
+    protected Time startTime;
     @XmlElement(required = true)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar finishTime;
+    @JsonSerialize(using = TimeAdapter.TimeSerializer.class)
+    @JsonDeserialize(using = TimeAdapter.TimeDeserializer.class)
+    protected Time finishTime;
     @XmlElement(required = true)
     protected Category category;
     @XmlElement(required = true)
@@ -87,6 +98,7 @@ public class Event {
     protected RegistrationWrapper registrationWrapper;
     protected EventStaffWrapper eventStaffWrapper;
     protected EventMaterialWrapper eventMaterialWrapper;
+
 
     /**
      * Obtient la valeur de la propriété id.
@@ -160,7 +172,7 @@ public class Event {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -172,7 +184,7 @@ public class Event {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setDate(XMLGregorianCalendar value) {
+    public void setDate(Date value) {
         this.date = value;
     }
 
@@ -184,7 +196,7 @@ public class Event {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getStartTime() {
+    public Time getStartTime() {
         return startTime;
     }
 
@@ -196,7 +208,7 @@ public class Event {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setStartTime(XMLGregorianCalendar value) {
+    public void setStartTime(Time value) {
         this.startTime = value;
     }
 
@@ -208,7 +220,7 @@ public class Event {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getFinishTime() {
+    public Time getFinishTime() {
         return finishTime;
     }
 
@@ -220,7 +232,7 @@ public class Event {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setFinishTime(XMLGregorianCalendar value) {
+    public void setFinishTime(Time value) {
         this.finishTime = value;
     }
 

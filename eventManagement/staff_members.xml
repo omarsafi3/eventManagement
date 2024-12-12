@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<staff_members/>
+<staff_members>
+    <staff_member>
+        <id>1</id>
+        <email>ftayma@gmail.com</email>
+        <fullName>ftayma</fullName>
+        <password>123</password>
+        <roles>Staffmember</roles>
+    </staff_member>
+</staff_members>

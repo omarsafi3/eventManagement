@@ -1,14 +1,11 @@
 package org.example.eventmanagement.repository;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.*;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import org.example.eventmanagement.entity.generated.Event;
 import org.springframework.stereotype.Repository;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +21,7 @@ public class EventRepository {
     public EventRepository() {
         try {
             this.file = new File(FILE_PATH);
-            this.context = JAXBContext.newInstance(EventWrapperList.class);
+            this.context = JAXBContext.newInstance(EventListWrapper.class);
 
             // Initialize the file if it doesn't exist
             if (!file.exists()) {
@@ -39,9 +36,9 @@ public class EventRepository {
         try {
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            marshaller.marshal(new EventWrapperList(events), file);
+            marshaller.marshal(new EventListWrapper(events), file);
         } catch (JAXBException e) {
-            throw new RuntimeException("Error saving events to file", e);
+            throw new RuntimeException("Error saving events to XML", e);
         }
     }
 
@@ -50,13 +47,11 @@ public class EventRepository {
         if (events == null) {
             events = new ArrayList<>();
         }
-
         long maxId = events.stream()
                 .mapToLong(Event::getId)
                 .max()
                 .orElse(0);
         event.setId(maxId + 1);
-
         events.add(event);
         saveAll(events);
     }
@@ -64,12 +59,20 @@ public class EventRepository {
     public List<Event> findAll() {
         try {
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            EventWrapperList wrapper = (EventWrapperList) unmarshaller.unmarshal(file);
-            List<Event> events = wrapper != null ? wrapper.getEvents() : new ArrayList<>();
-            return events;
+            EventListWrapper wrapper = (EventListWrapper) unmarshaller.unmarshal(file);
+            return wrapper != null ? wrapper.getEvents() : new ArrayList<>();
         } catch (JAXBException e) {
-            throw new RuntimeException("Error reading events from file", e);
+            System.out.println("Error reading events from XML. Returning empty list.");
+            return new ArrayList<>();
         }
+    }
+
+    public Event findById(Long id) {
+        List<Event> events = findAll();
+        return events.stream()
+                .filter(event -> event.getId() == id)
+                .findFirst()
+                .orElse(null);
     }
 
     public Event findByName(String name) {
@@ -78,22 +81,6 @@ public class EventRepository {
                 .filter(event -> event.getTitle().equals(name))
                 .findFirst()
                 .orElse(null);
-    }
-
-    public Event findById(Long id) {
-        List<Event> events = findAll();
-        return events.stream()
-                .filter(event -> event.getId()==id)
-                .findFirst()
-                .orElse(null);
-    }
-
-    public void deleteById(Long id) {
-        List<Event> events = findAll();
-        List<Event> updatedEvents = events.stream()
-                .filter(event -> event.getId() != id)
-                .collect(Collectors.toList());
-        saveAll(updatedEvents);
     }
 
     public List<Event> findByNameContaining(String keyword) {
@@ -107,24 +94,43 @@ public class EventRepository {
         for (int i = 0; i < events.size(); i++) {
             if (events.get(i).getId() == event.getId()) {
                 events.set(i, event);
-                saveAll(events);
-                return;
+                break;
             }
         }
-        throw new RuntimeException("Event with ID " + event.getId() + " not found.");
+        saveAll(events);
     }
 
-    @XmlRootElement(name = "events")
-    private static class EventWrapperList {
-        private final List<Event> events;
+    public void deleteById(Long id) {
+        List<Event> events = findAll();
+        events.removeIf(event -> event.getId() == id);
+        saveAll(events);
+    }
 
-        public EventWrapperList(List<Event> events) {
+    public void deleteByName(String name) {
+        List<Event> events = findAll();
+        events.removeIf(event -> event.getTitle().equals(name));
+        saveAll(events);
+    }
+
+    // Wrapper class for marshalling and unmarshalling
+    @XmlRootElement(name = "events")
+    private static class EventListWrapper {
+        private List<Event> events;
+
+        public EventListWrapper() {
+        }
+
+        public EventListWrapper(List<Event> events) {
             this.events = events;
         }
-        @XmlElement
+
+        @XmlElement(name = "event") // Match individual item names in XML
         public List<Event> getEvents() {
             return events;
         }
-    }
 
+        public void setEvents(List<Event> events) {
+            this.events = events;
+        }
+    }
 }

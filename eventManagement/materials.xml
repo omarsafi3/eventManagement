@@ -12,4 +12,10 @@
         <quantity>3</quantity>
         <hourlyRate>10.2</hourlyRate>
     </material>
+    <material>
+        <id>4</id>
+        <name>test</name>
+        <quantity>3</quantity>
+        <hourlyRate>5.0</hourlyRate>
+    </material>
 </materials>

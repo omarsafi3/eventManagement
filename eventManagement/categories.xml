@@ -8,4 +8,8 @@
         <id>2</id>
         <name>test</name>
     </category>
+    <category>
+        <id>3</id>
+        <name>test</name>
+    </category>
 </categories>
