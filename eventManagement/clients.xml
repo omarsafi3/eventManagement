@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clients>
+    <client>
+        <id>1</id>
+        <name>our Client</name>
+        <phoneNumber>11222333</phoneNumber>
+        <email>client@gmail.com</email>
+        <address>route client klm client</address>
+    </client>
+</clients>
