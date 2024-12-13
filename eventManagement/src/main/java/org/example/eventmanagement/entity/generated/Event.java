@@ -21,6 +21,8 @@ import jakarta.xml.bind.annotation.XmlType;
 import org.example.eventmanagement.config.TimeAdapter;
 
 import java.sql.Time;
+import java.time.Instant;
+import java.time.LocalTime;
 import java.util.Date;
 
 

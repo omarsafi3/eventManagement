@@ -5,7 +5,6 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.eventmanagement.config.InstantAdapter;
 
 import java.time.Instant;
 import java.util.List;
@@ -27,7 +26,6 @@ public class RefreshToken {
     private String token;
 
     @XmlElement(name = "ExpiryDate")
-    @XmlJavaTypeAdapter(InstantAdapter.class)
     private Instant expiryDate;
 
     @XmlRootElement
