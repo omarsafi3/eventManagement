@@ -2,23 +2,23 @@
 <rooms>
     <room>
         <id>1</id>
-        <name>eleve</name>
+        <name>Eleve Conference Room</name>
         <capacity>20</capacity>
         <hourlyRate>17.0</hourlyRate>
         <surface>19.0</surface>
     </room>
     <room>
         <id>2</id>
-        <name>ahla</name>
+        <name>Ahla Meeting Room</name>
         <capacity>13</capacity>
         <hourlyRate>12.0</hourlyRate>
-        <surface>0.0</surface>
+        <surface>18.0</surface>
     </room>
     <room>
         <id>3</id>
-        <name>3mor</name>
+        <name>3Mor Small Room</name>
         <capacity>3</capacity>
         <hourlyRate>5.0</hourlyRate>
-        <surface>0.0</surface>
+        <surface>10.0</surface>
     </room>
 </rooms>

@@ -2,11 +2,11 @@
 <events>
     <event>
         <id>7</id>
-        <title>Sample Event Title</title>
-        <description>This is a sample event description.</description>
+        <title>Annual Corporate Meeting</title>
+        <description>Discussing the company</description>
         <date>2024-12-15+01:00</date>
-        <startTime/>
-        <finishTime/>
+        <startTime>09:00</startTime>
+        <finishTime>11:00</finishTime>
         <category>
             <id>1</id>
         </category>
@@ -23,5 +23,74 @@
         <registrationWrapper/>
         <eventStaffWrapper/>
         <eventMaterialWrapper/>
+    </event>
+    <event>
+        <id>8</id>
+        <title>Team Workshop</title>
+        <description>Team-building </description>
+        <date>2024-12-16+01:00</date>
+        <startTime>10:00</startTime>
+        <finishTime>13:00</finishTime>
+        <category>
+            <id>2</id>
+        </category>
+        <client>
+            <id>2</id>
+            <phoneNumber>0</phoneNumber>
+        </client>
+        <room>
+            <id>2</id>
+            <capacity>0</capacity>
+            <hourlyRate>0.0</hourlyRate>
+            <surface>0.0</surface>
+        </room>
+        <registrationWrapper/>
+        <eventStaffWrapper/>
+        <eventMaterialWrapper/>
+    </event>
+    <event>
+        <id>9</id>
+        <title>Tech Conference</title>
+        <description>Exploring the latest </description>
+        <date>2024-12-17+01:00</date>
+        <startTime>08:00</startTime>
+        <finishTime>17:00</finishTime>
+        <category>
+            <id>3</id>
+        </category>
+        <client>
+            <id>3</id>
+            <phoneNumber>0</phoneNumber>
+        </client>
+        <room>
+            <id>3</id>
+            <capacity>0</capacity>
+            <hourlyRate>0.0</hourlyRate>
+            <surface>0.0</surface>
+        </room>
+        <registrationWrapper/>
+        <eventStaffWrapper/>
+        <eventMaterialWrapper/>
+    </event>
+    <event>
+        <id>10</id>
+        <title>Testing</title>
+        <description>hello</description>
+        <date>2024-12-11+01:00</date>
+        <startTime>20:25</startTime>
+        <finishTime>23:23</finishTime>
+        <category>
+            <id>1</id>
+        </category>
+        <client>
+            <id>1</id>
+            <phoneNumber>0</phoneNumber>
+        </client>
+        <room>
+            <id>1</id>
+            <capacity>0</capacity>
+            <hourlyRate>0.0</hourlyRate>
+            <surface>0.0</surface>
+        </room>
     </event>
 </events>

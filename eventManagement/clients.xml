@@ -2,9 +2,23 @@
 <clients>
     <client>
         <id>1</id>
-        <name>our Client</name>
+        <name>Our Client</name>
         <phoneNumber>11222333</phoneNumber>
         <email>client@gmail.com</email>
-        <address>route client klm client</address>
+        <address>Route Client, KLM, City, Country</address>
+    </client>
+    <client>
+        <id>2</id>
+        <name>Jane Doe Enterprises</name>
+        <phoneNumber>22334455</phoneNumber>
+        <email>janedoe@enterprises.com</email>
+        <address>456 Business Ave, Suite 100, New York, USA</address>
+    </client>
+    <client>
+        <id>3</id>
+        <name>Tech Innovators Ltd.</name>
+        <phoneNumber>33445566</phoneNumber>
+        <email>contact@techinnovators.com</email>
+        <address>789 Innovation Road, Silicon Valley, CA, USA</address>
     </client>
 </clients>
