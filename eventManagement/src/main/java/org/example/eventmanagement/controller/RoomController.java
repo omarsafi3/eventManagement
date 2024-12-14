@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -79,5 +80,13 @@ public class RoomController {
     public ResponseEntity<String> deleteRoomById(@PathVariable Long id) {
         roomService.deleteRoomById(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/available-rooms")
+    public ResponseEntity<List<Room>> findAvailableRooms
+            (@RequestParam String start, @RequestParam String end, @RequestParam String day)
+            throws ParseException {
+        List<Room> rooms = roomService.findAvailableRooms(start, end, day);
+        return new ResponseEntity<>(rooms, HttpStatus.OK);
     }
 }

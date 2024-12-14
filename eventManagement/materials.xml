@@ -2,7 +2,7 @@
 <materials>
     <material>
         <id>2</id>
-        <name>hauts parleur</name>
+        <name>hauts parleurs edited</name>
         <quantity>22</quantity>
         <hourlyRate>2.0</hourlyRate>
     </material>
@@ -17,5 +17,11 @@
         <name>test</name>
         <quantity>3</quantity>
         <hourlyRate>5.0</hourlyRate>
+    </material>
+    <material>
+        <id>5</id>
+        <name>projector</name>
+        <quantity>5</quantity>
+        <hourlyRate>15.0</hourlyRate>
     </material>
 </materials>

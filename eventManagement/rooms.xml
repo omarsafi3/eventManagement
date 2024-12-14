@@ -16,9 +16,9 @@
     </room>
     <room>
         <id>3</id>
-        <name>3Mor Small Room</name>
-        <capacity>3</capacity>
-        <hourlyRate>5.0</hourlyRate>
-        <surface>10.0</surface>
+        <name>yes</name>
+        <capacity>30</capacity>
+        <hourlyRate>70.0</hourlyRate>
+        <surface>100.0</surface>
     </room>
 </rooms>
