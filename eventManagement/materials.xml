@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <materials>
     <material>
-        <id>2</id>
-        <name>hauts parleur</name>
+        <id>1</id>
+        <name>Speakers</name>
         <quantity>22</quantity>
-        <hourlyRate>2.0</hourlyRate>
+        <hourlyRate>15.0</hourlyRate>
+    </material>
+    <material>
+        <id>2</id>
+        <name>Projector</name>
+        <quantity>3</quantity>
+        <hourlyRate>25.0</hourlyRate>
     </material>
     <material>
         <id>3</id>
-        <name>salami</name>
-        <quantity>3</quantity>
-        <hourlyRate>10.2</hourlyRate>
-    </material>
-    <material>
-        <id>4</id>
-        <name>test</name>
+        <name>Whiteboard</name>
         <quantity>3</quantity>
         <hourlyRate>5.0</hourlyRate>
     </material>

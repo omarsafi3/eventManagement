@@ -11,8 +11,8 @@
         <password>$2a$10$5HJdOkOHv.wWMuvNvWzbzuGWFswA6aNh7PkZvvoy3sLqxqNMOw03m</password>
     </user>
     <user id="10">
-        <email>test@gmail.com</email>
-        <fullName>test</fullName>
+        <email>arthur123@gmail.com</email>
+        <fullName>Arthur Jenkins</fullName>
         <password>$2a$10$CONwcnpm0hcbmrCTVkGMOOa0EB9wPtCjxQmxWm/I4aI3hjiJcmzV.</password>
         <roles>ADMIN</roles>
     </user>

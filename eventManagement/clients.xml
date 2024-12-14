@@ -2,22 +2,22 @@
 <clients>
     <client>
         <id>1</id>
-        <name>Our Client</name>
-        <phoneNumber>11222333</phoneNumber>
-        <email>client@gmail.com</email>
-        <address>Route Client, KLM, City, Country</address>
+        <name>Global Solutions Inc.</name>
+        <phoneNumber>+1-800-123-4567</phoneNumber>
+        <email>contact@globalsolutions.com</email>
+        <address>123 Main Street, London, UK</address>
     </client>
     <client>
         <id>2</id>
-        <name>Jane Doe Enterprises</name>
-        <phoneNumber>22334455</phoneNumber>
-        <email>janedoe@enterprises.com</email>
-        <address>456 Business Ave, Suite 100, New York, USA</address>
+        <name>Doe & Co.</name>
+        <phoneNumber>+1-212-555-7890</phoneNumber>
+        <email>info@doeandco.com</email>
+        <address>456 Business Avenue, Suite 100, New York, USA</address>
     </client>
     <client>
         <id>3</id>
         <name>Tech Innovators Ltd.</name>
-        <phoneNumber>33445566</phoneNumber>
+        <phoneNumber>+1-650-987-6543</phoneNumber>
         <email>contact@techinnovators.com</email>
         <address>789 Innovation Road, Silicon Valley, CA, USA</address>
     </client>
