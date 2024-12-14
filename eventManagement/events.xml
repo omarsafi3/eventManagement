@@ -12,12 +12,12 @@
         </category>
         <client>
             <id>1</id>
-            <phoneNumber>0000000000</phoneNumber>
+            <phoneNumber>0</phoneNumber>
         </client>
         <room>
             <id>1</id>
             <capacity>50</capacity>
-            <hourlyRate>100.00</hourlyRate>
+            <hourlyRate>100.0</hourlyRate>
             <surface>75.0</surface>
         </room>
         <registrationWrapper/>
@@ -36,12 +36,12 @@
         </category>
         <client>
             <id>2</id>
-            <phoneNumber>0000000000</phoneNumber>
+            <phoneNumber>0</phoneNumber>
         </client>
         <room>
             <id>2</id>
             <capacity>30</capacity>
-            <hourlyRate>80.00</hourlyRate>
+            <hourlyRate>80.0</hourlyRate>
             <surface>50.0</surface>
         </room>
         <registrationWrapper/>
@@ -60,37 +60,13 @@
         </category>
         <client>
             <id>3</id>
-            <phoneNumber>0000000000</phoneNumber>
+            <phoneNumber>0</phoneNumber>
         </client>
         <room>
             <id>3</id>
             <capacity>100</capacity>
-            <hourlyRate>200.00</hourlyRate>
+            <hourlyRate>200.0</hourlyRate>
             <surface>150.0</surface>
-        </room>
-        <registrationWrapper/>
-        <eventStaffWrapper/>
-        <eventMaterialWrapper/>
-    </event>
-    <event>
-        <id>10</id>
-        <title>Testing Event</title>
-        <description>Testing event setup and configurations.</description>
-        <date>2024-12-11+01:00</date>
-        <startTime>20:25</startTime>
-        <finishTime>23:23</finishTime>
-        <category>
-            <id>1</id>
-        </category>
-        <client>
-            <id>1</id>
-            <phoneNumber>0000000000</phoneNumber>
-        </client>
-        <room>
-            <id>1</id>
-            <capacity>50</capacity>
-            <hourlyRate>100.00</hourlyRate>
-            <surface>75.0</surface>
         </room>
         <registrationWrapper/>
         <eventStaffWrapper/>
