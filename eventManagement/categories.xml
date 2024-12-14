@@ -2,14 +2,14 @@
 <categories>
     <category>
         <id>1</id>
-        <name>Meeting</name>
+        <name>Corporate Meeting</name>
     </category>
     <category>
         <id>2</id>
-        <name>Workshop</name>
+        <name>Team Workshop</name>
     </category>
     <category>
         <id>3</id>
-        <name>Conference</name>
+        <name>Technology Conference</name>
     </category>
 </categories>

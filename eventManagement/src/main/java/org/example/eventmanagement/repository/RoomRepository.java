@@ -54,7 +54,6 @@ public class RoomRepository {
                 .max()
                 .orElse(0);
         room.setId(maxId + 1);
-
         rooms.add(room);
         saveAll(rooms);
     }

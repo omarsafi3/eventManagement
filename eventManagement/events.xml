@@ -3,7 +3,7 @@
     <event>
         <id>7</id>
         <title>Annual Corporate Meeting</title>
-        <description>Discussing the company</description>
+        <description>Discussion on the company's progress and future goals.</description>
         <date>2024-12-15+01:00</date>
         <startTime>09:00</startTime>
         <finishTime>11:00</finishTime>
@@ -16,9 +16,9 @@
         </client>
         <room>
             <id>1</id>
-            <capacity>0</capacity>
-            <hourlyRate>0.0</hourlyRate>
-            <surface>0.0</surface>
+            <capacity>50</capacity>
+            <hourlyRate>100.0</hourlyRate>
+            <surface>75.0</surface>
         </room>
         <registrationWrapper/>
         <eventStaffWrapper/>
@@ -27,7 +27,7 @@
     <event>
         <id>8</id>
         <title>Team Workshop</title>
-        <description>Team-building </description>
+        <description>Team-building activities enhancing collaboration and productivity.</description>
         <date>2024-12-16+01:00</date>
         <startTime>10:00</startTime>
         <finishTime>13:00</finishTime>
@@ -40,9 +40,9 @@
         </client>
         <room>
             <id>2</id>
-            <capacity>0</capacity>
-            <hourlyRate>0.0</hourlyRate>
-            <surface>0.0</surface>
+            <capacity>30</capacity>
+            <hourlyRate>80.0</hourlyRate>
+            <surface>50.0</surface>
         </room>
         <registrationWrapper/>
         <eventStaffWrapper/>
@@ -51,7 +51,7 @@
     <event>
         <id>9</id>
         <title>Tech Conference</title>
-        <description>Exploring the latest </description>
+        <description>An exploration of the latest innovations and technologies in the industry.</description>
         <date>2024-12-17+01:00</date>
         <startTime>08:00</startTime>
         <finishTime>17:00</finishTime>
@@ -64,33 +64,12 @@
         </client>
         <room>
             <id>3</id>
-            <capacity>0</capacity>
-            <hourlyRate>0.0</hourlyRate>
-            <surface>0.0</surface>
+            <capacity>100</capacity>
+            <hourlyRate>200.0</hourlyRate>
+            <surface>150.0</surface>
         </room>
         <registrationWrapper/>
         <eventStaffWrapper/>
         <eventMaterialWrapper/>
-    </event>
-    <event>
-        <id>10</id>
-        <title>Testing</title>
-        <description>hello</description>
-        <date>2024-12-11+01:00</date>
-        <startTime>20:25</startTime>
-        <finishTime>23:23</finishTime>
-        <category>
-            <id>1</id>
-        </category>
-        <client>
-            <id>1</id>
-            <phoneNumber>0</phoneNumber>
-        </client>
-        <room>
-            <id>1</id>
-            <capacity>0</capacity>
-            <hourlyRate>0.0</hourlyRate>
-            <surface>0.0</surface>
-        </room>
     </event>
 </events>
