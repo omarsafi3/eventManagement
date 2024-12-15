@@ -35,4 +35,11 @@
         <roles>USER</roles>
         <totalPaid>0.0</totalPaid>
     </participant>
+    <participant id="6">
+        <email>eazea</email>
+        <fullName>ezazeaz</fullName>
+        <password>eazeaz</password>
+        <roles>USER</roles>
+        <totalPaid>0.0</totalPaid>
+    </participant>
 </participants>

@@ -22,4 +22,10 @@
         <password>$2a$10$SnZKgevcPE6EVcxdJsZOYe8Dtsn/lGFQLY6VqSj2S2QLfME0Z7g3m</password>
         <roles>USER</roles>
     </user>
+    <user id="12">
+        <email>eazea</email>
+        <fullName>ezazeaz</fullName>
+        <password>$2a$10$G4ora30wziPESeu/y5BxY.gaflKGSw1XG23ErIk86bGMIzdmH4n7u</password>
+        <roles>USER</roles>
+    </user>
 </userListWrapper>
