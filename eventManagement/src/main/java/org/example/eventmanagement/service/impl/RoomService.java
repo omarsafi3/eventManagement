@@ -14,10 +14,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -119,23 +116,22 @@ public class RoomService {
 
         // Check events for availability based on the converted times
         for (Event event : events) {
-            // Assuming event start and finish times are also LocalTime objects (adjust accordingly)
             LocalTime eventStart = LocalTime.parse(event.getStartTime(), DateTimeFormatter.ISO_LOCAL_TIME);
             LocalTime eventEnd = LocalTime.parse(event.getFinishTime(), DateTimeFormatter.ISO_LOCAL_TIME);
 
-            // Compare the event time with the requested start and end times
             if (event.getDate().equals(date)) {
-                // Check for time overlap
                 boolean hasOverlap = !(endZonedDateTime.toLocalTime().isBefore(eventStart) || startZonedDateTime.toLocalTime().isAfter(eventEnd));
                 if (hasOverlap) {
                     unavailableRooms.add(event.getRoom());
-                    //rooms.remove(event.getRoom());
-                    //System.out.println("Room " + event.getRoom().getName() + " is unavailable for the requested time range");
+                    rooms.remove(event.getRoom());
+                    System.out.println("I removed " + rooms.toString());
+                    System.out.println("Room " + event.getRoom().getName() + " is unavailable for the requested time range");
+
                 }
             }
         }
-        //Remove unavailable rooms from the list
-        rooms.removeAll(unavailableRooms);
+        System.out.println("Unavailable rooms: " + unavailableRooms);
+        //rooms.removeAll(unavailableRooms);
         return rooms;
     }
 

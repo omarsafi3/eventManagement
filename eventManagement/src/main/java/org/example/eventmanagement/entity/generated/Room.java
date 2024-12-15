@@ -15,6 +15,8 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+import java.util.Objects;
+
 
 /**
  * <p>Classe Java pour Room complex type.
@@ -145,4 +147,17 @@ public class Room {
         this.surface = value;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;  // Check if both objects are the same
+        if (obj == null || getClass() != obj.getClass()) return false;  // Null or different class check
+        Room room = (Room) obj;
+        return id == room.id;  // Compare based on a unique field like roomId (for primitives)
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);  // Use roomId or another unique field for hashing
+    }
 }
