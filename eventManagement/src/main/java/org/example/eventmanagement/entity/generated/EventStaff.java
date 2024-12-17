@@ -10,11 +10,16 @@ package org.example.eventmanagement.entity.generated;
 
 
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.example.eventmanagement.config.LocalTimeAdapter;
 
 
 /**
@@ -58,11 +63,21 @@ public class EventStaff {
     @XmlElement(required = true)
     protected String role;
     @XmlElement(required = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startTime;
+    //@XmlSchemaType(name = "dateTime")
+    @XmlSchemaType(name = "time")
+    @JsonSerialize(using = LocalTimeAdapter.LocalTimeSerializer.class)
+    @JsonDeserialize(using = LocalTimeAdapter.LocalTimeDeserializer.class)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
+
+    protected String startTime;
     @XmlElement(required = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar finishTime;
+    //@XmlSchemaType(name = "dateTime")
+    @XmlSchemaType(name = "time")
+    @JsonSerialize(using = LocalTimeAdapter.LocalTimeSerializer.class)
+    @JsonDeserialize(using = LocalTimeAdapter.LocalTimeDeserializer.class)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
+
+    protected String finishTime;
     @XmlElement(required = true)
     protected EventStaffRole eventStaffRole;
 
@@ -138,7 +153,7 @@ public class EventStaff {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
@@ -150,7 +165,7 @@ public class EventStaff {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setStartTime(XMLGregorianCalendar value) {
+    public void setStartTime(String value) {
         this.startTime = value;
     }
 
@@ -162,7 +177,7 @@ public class EventStaff {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getFinishTime() {
+    public String getFinishTime() {
         return finishTime;
     }
 
@@ -174,7 +189,7 @@ public class EventStaff {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setFinishTime(XMLGregorianCalendar value) {
+    public void setFinishTime(String value) {
         this.finishTime = value;
     }
 

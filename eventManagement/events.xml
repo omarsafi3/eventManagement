@@ -97,4 +97,56 @@
         <eventStaffWrapper/>
         <eventMaterialWrapper/>
     </event>
+    <event>
+        <id>10</id>
+        <title>Dev Workshop</title>
+        <description>A workshop to develop web apps.</description>
+        <date>2024-12-18+01:00</date>
+        <startTime>10:00</startTime>
+        <finishTime>13:00</finishTime>
+        <category>
+            <id>1</id>
+            <name>Corporate Meeting</name>
+        </category>
+        <room>
+            <id>3</id>
+            <name>Focus Small Room</name>
+            <capacity>5</capacity>
+            <hourlyRate>20.0</hourlyRate>
+            <surface>15.0</surface>
+        </room>
+        <registrationWrapper>
+            <registration>
+                <id>0</id>
+                <participant id="2">
+                    <email>test@gmail.com</email>
+                    <fullName>fatma</fullName>
+                    <password>test</password>
+                    <roles>USER</roles>
+                    <totalPaid>0.0</totalPaid>
+                </participant>
+                <amountPaid>75.0</amountPaid>
+            </registration>
+        </registrationWrapper>
+        <eventStaffWrapper>
+            <eventStaff>
+                <id>1</id>
+                <staffMember id="3">
+                    <email>johndoe@example.com</email>
+                    <fullName>John Doe</fullName>
+                    <password>password123</password>
+                    <roles>STAFF_MEMBER</roles>
+                </staffMember>
+                <startTime>09:30</startTime>
+                <finishTime>13:30</finishTime>
+                <eventStaffRole>
+                    <id>10</id>
+                    <role>
+                        <id>1</id>
+                        <name>Animation</name>
+                    </role>
+                </eventStaffRole>
+            </eventStaff>
+        </eventStaffWrapper>
+    </event>
 </events>

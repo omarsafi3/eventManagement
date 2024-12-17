@@ -38,13 +38,13 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EventStaffRole", propOrder = {
     "id",
-    "name"
+    "role"
 })
 public class EventStaffRole {
 
     protected long id;
     @XmlElement(required = true)
-    protected String name;
+    protected Skill role;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -70,8 +70,8 @@ public class EventStaffRole {
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public Skill getRole() {
+        return role;
     }
 
     /**
@@ -82,8 +82,8 @@ public class EventStaffRole {
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setRole(Skill value) {
+        this.role = value;
     }
 
 }

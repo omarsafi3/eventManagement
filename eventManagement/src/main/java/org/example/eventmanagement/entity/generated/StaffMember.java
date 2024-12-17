@@ -16,6 +16,8 @@ import jakarta.xml.bind.annotation.XmlType;
 import lombok.ToString;
 import org.example.eventmanagement.entity.User;
 
+import java.util.Objects;
+
 
 /**
  * <p>Classe Java pour StaffMember complex type.
@@ -99,4 +101,19 @@ public class StaffMember extends User {
         this.staffSkillWrapper = value;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // Check if same instance
+        if (obj == null || getClass() != obj.getClass()) return false; // Check null and class type
+
+        StaffMember that = (StaffMember) obj; // Typecast
+
+        return Objects.equals(getId(), that.getId()); // Compare only id
+    }
+
+    // Override hashCode (recommended when overriding equals)
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId()); // Ensure it matches the fields in equals
+    }
 }
