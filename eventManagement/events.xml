@@ -149,4 +149,70 @@
             </eventStaff>
         </eventStaffWrapper>
     </event>
+    <event>
+        <id>11</id>
+        <title>Testing it all workshop</title>
+        <description>A workshop to test it all</description>
+        <date>2024-12-19+01:00</date>
+        <startTime>10:00</startTime>
+        <finishTime>13:00</finishTime>
+        <category>
+            <id>1</id>
+            <name>Corporate Meeting</name>
+        </category>
+        <room>
+            <id>3</id>
+            <name>Focus Small Room</name>
+            <capacity>5</capacity>
+            <hourlyRate>20.0</hourlyRate>
+            <surface>15.0</surface>
+        </room>
+        <registrationWrapper>
+            <registration>
+                <id>0</id>
+                <participant id="2">
+                    <email>test@gmail.com</email>
+                    <fullName>fatma</fullName>
+                    <password>test</password>
+                    <roles>USER</roles>
+                    <totalPaid>0.0</totalPaid>
+                </participant>
+                <amountPaid>75.0</amountPaid>
+            </registration>
+        </registrationWrapper>
+        <eventStaffWrapper>
+            <eventStaff>
+                <id>1</id>
+                <staffMember id="3">
+                    <email>johndoe@example.com</email>
+                    <fullName>John Doe</fullName>
+                    <password>password123</password>
+                    <roles>STAFF_MEMBER</roles>
+                </staffMember>
+                <startTime>08:30</startTime>
+                <finishTime>13:30</finishTime>
+                <eventStaffRole>
+                    <id>10</id>
+                    <role>
+                        <id>1</id>
+                        <name>Animation</name>
+                    </role>
+                </eventStaffRole>
+            </eventStaff>
+        </eventStaffWrapper>
+        <eventMaterialWrapper>
+            <eventMaterial>
+                <id>0</id>
+                <quantityUsed>10</quantityUsed>
+                <material>
+                    <id>4</id>
+                    <name>RGB Lights</name>
+                    <quantity>30</quantity>
+                    <hourlyRate>12.0</hourlyRate>
+                </material>
+                <startTime>10:00</startTime>
+                <finishTime>13:00</finishTime>
+            </eventMaterial>
+        </eventMaterialWrapper>
+    </event>
 </events>

@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -85,5 +86,16 @@ public class MaterialController {
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/available-material")
+    public ResponseEntity<List<Material>> findAvailableMaterials(
+            @RequestParam String start,
+            @RequestParam String end,
+            @RequestParam String day) throws ParseException {
+
+        List<Material> availableMaterials = materialService.findAvailableMaterials(start, end, day);
+
+        return new ResponseEntity<>(availableMaterials, HttpStatus.OK);
     }
 }

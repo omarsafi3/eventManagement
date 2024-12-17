@@ -14,6 +14,8 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+import java.util.Objects;
+
 
 /**
  * <p>Classe Java pour Material complex type.
@@ -122,6 +124,20 @@ public class Material {
      */
     public void setHourlyRate(double value) {
         this.hourlyRate = value;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Material material = (Material) o;
+        return id == material.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
 }

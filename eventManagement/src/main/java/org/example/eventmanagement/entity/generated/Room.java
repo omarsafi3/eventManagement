@@ -149,15 +149,14 @@ public class Room {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;  // Check if both objects are the same
-        if (obj == null || getClass() != obj.getClass()) return false;  // Null or different class check
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
         Room room = (Room) obj;
-        return id == room.id;  // Compare based on a unique field like roomId (for primitives)
-    }
+        return id == room.id;   }
 
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);  // Use roomId or another unique field for hashing
+        return Objects.hash(id);
     }
 }

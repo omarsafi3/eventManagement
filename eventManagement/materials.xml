@@ -18,4 +18,10 @@
         <quantity>3</quantity>
         <hourlyRate>5.0</hourlyRate>
     </material>
+    <material>
+        <id>4</id>
+        <name>RGB Lights</name>
+        <quantity>30</quantity>
+        <hourlyRate>12.0</hourlyRate>
+    </material>
 </materials>
