@@ -20,8 +20,6 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import org.example.eventmanagement.config.LocalTimeAdapter;
 
-import java.time.LocalTime;
-
 
 /**
  * <p>Classe Java pour EventStaff complex type.
@@ -67,12 +65,12 @@ public class EventStaff {
     @XmlSchemaType(name = "dateTime")
     @JsonSerialize(using = LocalTimeAdapter.LocalTimeSerializer.class)
     @JsonDeserialize(using = LocalTimeAdapter.LocalTimeDeserializer.class)
-    protected LocalTime startTime;
+    protected String startTime;
     @XmlElement(required = true)
     @XmlSchemaType(name = "dateTime")
     @JsonSerialize(using = LocalTimeAdapter.LocalTimeSerializer.class)
     @JsonDeserialize(using = LocalTimeAdapter.LocalTimeDeserializer.class)
-    protected LocalTime  finishTime;
+    protected String finishTime;
     @XmlElement(required = true)
     protected EventStaffRole eventStaffRole;
 
@@ -148,7 +146,7 @@ public class EventStaff {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalTime  getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
@@ -160,7 +158,7 @@ public class EventStaff {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setStartTime(LocalTime  value) {
+    public void setStartTime(String value) {
         this.startTime = value;
     }
 
@@ -172,7 +170,7 @@ public class EventStaff {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalTime  getFinishTime() {
+    public String getFinishTime() {
         return finishTime;
     }
 
@@ -184,7 +182,7 @@ public class EventStaff {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setFinishTime(LocalTime  value) {
+    public void setFinishTime(String value) {
         this.finishTime = value;
     }
 

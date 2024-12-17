@@ -100,7 +100,6 @@ public class Event {
     protected Room room;
     @XmlElement(name = "registrationWrapper")
     protected RegistrationWrapper registrationWrapper;
-    @XmlElement(name = "eventStaffWrapper")
     protected EventStaffWrapper eventStaffWrapper;
     protected EventMaterialWrapper eventMaterialWrapper;
 
