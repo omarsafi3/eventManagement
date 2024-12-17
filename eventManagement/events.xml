@@ -22,21 +22,31 @@
         </room>
         <registrationWrapper>
             <registration>
-                <id>0</id>
-                <participant id="13">
-                    <email>test@gmail.com</email>
-                    <totalPaid>0.0</totalPaid>
+                <id>1</id>
+                <participant id="1">
+                    <email>john.smith@example.com</email>
+                    <fullName>John Smith</fullName>
+                    <totalPaid>50.0</totalPaid>
                 </participant>
-                <amountPaid>0.0</amountPaid>
+                <amountPaid>50.0</amountPaid>
             </registration>
             <registration>
-                <id>0</id>
-                <participant id="13">
-                    <email>test@gmail.com</email>
-                    <fullName>test</fullName>
-                    <totalPaid>0.0</totalPaid>
+                <id>2</id>
+                <participant id="2">
+                    <email>mary.jones@example.com</email>
+                    <fullName>Mary Jones</fullName>
+                    <totalPaid>75.0</totalPaid>
                 </participant>
-                <amountPaid>0.0</amountPaid>
+                <amountPaid>75.0</amountPaid>
+            </registration>
+            <registration>
+                <id>3</id>
+                <participant id="3">
+                    <email>robert.brown@example.com</email>
+                    <fullName>Robert Brown</fullName>
+                    <totalPaid>100.0</totalPaid>
+                </participant>
+                <amountPaid>100.0</amountPaid>
             </registration>
         </registrationWrapper>
         <eventStaffWrapper/>
