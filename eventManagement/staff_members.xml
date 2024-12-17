@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <staff_members>
     <staff_member>
-        <id>1</id>
         <email>ftayma@gmail.com</email>
         <fullName>ftayma</fullName>
         <password>123</password>
         <roles>Staffmember</roles>
+    </staff_member>
+    <staff_member id="3">
+        <email>johndoe@example.com</email>
+        <fullName>John Doe</fullName>
+        <password>password123</password>
+        <roles>STAFF_MEMBER</roles>
+    </staff_member>
+    <staff_member id="6">
+        <email>johndoe@example.com</email>
+        <fullName>John DoeEEE</fullName>
+        <password>password123</password>
+        <roles>STAFF_MEMBER</roles>
+        <staffSkillWrapper>
+            <staffSkill>
+                <id>1</id>
+                <name>Animation</name>
+                <description>Leading activities and presenting</description>
+            </staffSkill>
+            <staffSkill>
+                <id>2</id>
+                <name>Technician</name>
+                <description>Setting up electronics and troubleshooting</description>
+            </staffSkill>
+            <staffSkill>
+                <id>3</id>
+                <name>Project Management</name>
+                <description>Experienced in managing projects and teams</description>
+            </staffSkill>
+        </staffSkillWrapper>
     </staff_member>
 </staff_members>

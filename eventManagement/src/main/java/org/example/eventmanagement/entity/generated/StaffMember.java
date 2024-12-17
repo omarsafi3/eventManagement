@@ -13,6 +13,7 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import lombok.ToString;
 import org.example.eventmanagement.entity.User;
 
 
@@ -41,12 +42,14 @@ import org.example.eventmanagement.entity.User;
     "scheduleWrapper",
     "staffSkillWrapper"
 })
+@ToString
 public class StaffMember extends User {
 
-    @XmlElement(required = true)
+    @XmlElement(required = false)
     protected ScheduleWrapper scheduleWrapper;
-    @XmlElement(required = true)
+    @XmlElement(required = false)
     protected StaffSkillWrapper staffSkillWrapper;
+
 
     /**
      * Obtient la valeur de la propriété scheduleWrapper.

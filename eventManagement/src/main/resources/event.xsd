@@ -16,6 +16,86 @@
                 <xs:element name="event" maxOccurs="unbounded" type="Event"/>
             </xs:sequence>
         </xs:complexType>
+
+        <xs:key name="eventKey">
+            <xs:selector xpath="event"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="categoryKey">
+            <xs:selector xpath=".//category"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="clientKey">
+            <xs:selector xpath=".//client"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="roomKey">
+            <xs:selector xpath=".//room"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="registrationKey">
+            <xs:selector xpath=".//registration"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="materialKey">
+            <xs:selector xpath=".//material"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="eventMaterialKey">
+            <xs:selector xpath=".//eventMaterial"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="eventStaffKey">
+            <xs:selector xpath=".//eventStaff"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="eventStaffRoleKey">
+            <xs:selector xpath=".//eventStaffRole"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="scheduleKey">
+            <xs:selector xpath=".//schedule"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:key name="skillKey">
+            <xs:selector xpath=".//skill"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+
+        <xs:keyref name="eventCategoryRef" refer="categoryKey">
+            <xs:selector xpath="event/category"/>
+            <xs:field xpath="id"/>
+        </xs:keyref>
+
+        <xs:keyref name="eventClientRef" refer="clientKey">
+            <xs:selector xpath="event/client"/>
+            <xs:field xpath="id"/>
+        </xs:keyref>
+
+        <xs:keyref name="eventRoomRef" refer="roomKey">
+            <xs:selector xpath="event/room"/>
+            <xs:field xpath="id"/>
+        </xs:keyref>
+
+        <xs:keyref name="eventMaterialMaterialRef" refer="materialKey">
+            <xs:selector xpath=".//eventMaterial/material"/>
+            <xs:field xpath="id"/>
+        </xs:keyref>
+
+        <xs:keyref name="eventStaffRoleRef" refer="eventStaffRoleKey">
+            <xs:selector xpath=".//eventStaff/eventStaffRole"/>
+            <xs:field xpath="id"/>
+        </xs:keyref>
     </xs:element>
 
     <xs:complexType name="Event">
@@ -89,7 +169,6 @@
     <xs:complexType name="EventStaff">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
-            <!-- <xs:element name="eventId" type="xs:long"/>         -->
             <xs:element name="staffMember" type="StaffMember"/>
             <xs:element name="role" type="xs:string"/>
             <xs:element name="startTime" type="xs:dateTime"/>
@@ -102,15 +181,9 @@
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
-<!--            <xs:element name="skillWrapper" type="SkillWrapper"/>-->
+            <xs:element name="skill" type="Skill"/>
         </xs:sequence>
     </xs:complexType>
-
-<!--    <xs:complexType name="SkillWrapper">-->
-<!--        <xs:sequence>-->
-<!--            <xs:element name="skill" maxOccurs="unbounded" type="Skill"/>-->
-<!--        </xs:sequence>-->
-<!--    </xs:complexType>-->
 
     <xs:complexType name="Skill">
         <xs:sequence>
@@ -146,7 +219,6 @@
                 <xs:element name="isOff" type="xs:boolean"/>
                 <xs:element name="startTime" type="xs:time"/>
                 <xs:element name="endTime" type="xs:time"/>
-                <!-- <xs:element name="staffMemberId" type="xs:long"/> -->
             </xs:sequence>
         </xs:complexType>
 

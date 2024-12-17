@@ -24,7 +24,9 @@ public class StaffMemberController {
 
     @PostMapping
     public ResponseEntity<StaffMember> addStaffMember(@RequestBody StaffMember staffMember) {
+        System.out.println(staffMember);
         StaffMember createdStaffMember = staffMemberService.addStaffMember(staffMember);
+        System.out.println(staffMember);
         return new ResponseEntity<>(createdStaffMember, HttpStatus.CREATED);
     }
 

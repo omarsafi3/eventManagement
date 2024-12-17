@@ -20,7 +20,6 @@ public class User implements UserDetails {
     private String password;
     private String roles;
 
-
     private Date createdAt;
     private Date updatedAt;
 

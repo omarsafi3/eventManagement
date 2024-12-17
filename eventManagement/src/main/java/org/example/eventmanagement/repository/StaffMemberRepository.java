@@ -48,14 +48,14 @@ public class StaffMemberRepository {
         if (staffMembers == null) {
             staffMembers = new ArrayList<>();
         }
-        long maxId = staffMembers.stream()
-                .mapToLong(StaffMember::getId)
-                .max()
-                .orElse(0);
-        staffMember.setId(maxId + 1);
+
+
+
+
         staffMembers.add(staffMember);
         saveAll(staffMembers);
     }
+
 
     public List<StaffMember> findAll() {
         try {
