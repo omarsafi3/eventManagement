@@ -82,7 +82,7 @@ public class EventStaffRole {
      *     {@link String }
      *     
      */
-    public void setName(Skill value) {
+    public void setSkill(Skill value) {
         this.skill = value;
     }
 

@@ -9,10 +9,7 @@
 package org.example.eventmanagement.entity.generated;
 
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
@@ -42,8 +39,9 @@ import jakarta.xml.bind.annotation.XmlType;
     "name",
     "description"
 })
+@XmlRootElement(name = "Skill")
 public class Skill {
-
+    @XmlElement(required = true)
     protected long id;
     @XmlElement(required = true)
     protected String name;

@@ -11,10 +11,8 @@ package org.example.eventmanagement.entity.generated;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+
+import jakarta.xml.bind.annotation.*;
 
 
 /**
@@ -40,6 +38,7 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "EventStaffWrapper", propOrder = {
     "eventStaff"
 })
+@XmlRootElement(name = "EventStaffWrapper")
 public class EventStaffWrapper {
 
     @XmlElement(required = true)

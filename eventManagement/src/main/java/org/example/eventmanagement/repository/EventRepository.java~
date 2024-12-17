@@ -3,7 +3,9 @@ package org.example.eventmanagement.repository;
 import jakarta.xml.bind.*;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
-import org.example.eventmanagement.entity.generated.*;
+import org.example.eventmanagement.entity.generated.Event;
+import org.example.eventmanagement.entity.generated.EventMaterial;
+import org.example.eventmanagement.entity.generated.StaffMember;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
@@ -21,14 +23,11 @@ public class EventRepository {
     public EventRepository() {
         try {
             this.file = new File(FILE_PATH);
-            // Add all relevant classes to the JAXB context
             this.context = JAXBContext.newInstance(
                     EventListWrapper.class,
-                    Event.class,
-                    EventMaterial.class,   // Include other related classes
-                    EventStaff.class,
-                    ScheduleWrapper.class, // Include all necessary classes here
-                    StaffSkillWrapper.class
+                    Event.class, // Add the Event class to JAXB context
+                    EventMaterial.class, // Include EventMaterial or any other related classes
+                    StaffMember.class // Include other classes as needed
             );
 
             if (!file.exists()) {
@@ -38,7 +37,6 @@ public class EventRepository {
             throw new RuntimeException("Error initializing JAXB context", e);
         }
     }
-
 
     private void saveAll(List<Event> events) {
         try {

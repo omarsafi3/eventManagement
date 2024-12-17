@@ -14,11 +14,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.*;
 import org.example.eventmanagement.config.LocalTimeAdapter;
 
 
@@ -73,6 +69,7 @@ import java.util.Date;
     "eventStaffWrapper",
     "eventMaterialWrapper"
 })
+@XmlRootElement(name = "Event")
 public class Event {
 
     protected long id;
