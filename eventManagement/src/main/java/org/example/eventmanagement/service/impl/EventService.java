@@ -16,7 +16,6 @@ import java.util.List;
 
 @Service
 public class EventService {
-    private static final Logger log = LoggerFactory.getLogger(EventService.class);
 
     @Autowired
     private EventRepository repository;
@@ -86,8 +85,7 @@ public class EventService {
 
         updateEvent(event);
 
-        log.info("Registration added to event. Total registrations: {}",
-                registrationList.size());
+
     }
 
 

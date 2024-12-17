@@ -86,14 +86,14 @@ public class EventStaffRoleRepository {
     public EventStaffRole findByRoleName(String roleName) {
         List<EventStaffRole> eventStaffRoles = findAll();
         return eventStaffRoles.stream()
-                .filter(eventStaffRole -> eventStaffRole.getName().equalsIgnoreCase(roleName))
+                .filter(eventStaffRole -> eventStaffRole.getSkill().getName().equalsIgnoreCase(roleName))
                 .findFirst()
                 .orElse(null);
     }
 
     public List<EventStaffRole> findByRoleNameContaining(String keyword) {
         return findAll().stream()
-                .filter(eventStaffRole -> eventStaffRole.getName().toLowerCase().contains(keyword.toLowerCase()))
+                .filter(eventStaffRole -> eventStaffRole.getSkill().getName().toLowerCase().contains(keyword.toLowerCase()))
                 .collect(Collectors.toList());
     }
 

@@ -102,8 +102,8 @@ public class RoomService {
         ZonedDateTime startZonedDateTime = startLocalTime.atDate(LocalDate.parse(day)).atZone(zoneId);
         ZonedDateTime endZonedDateTime = endLocalTime.atDate(LocalDate.parse(day)).atZone(zoneId);
 
-        Time start = Time.valueOf(startZonedDateTime.toLocalTime());
-        Time end = Time.valueOf(endZonedDateTime.toLocalTime());
+//        Time start = Time.valueOf(startZonedDateTime.toLocalTime());
+//        Time end = Time.valueOf(endZonedDateTime.toLocalTime());
 
          SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = dateFormat.parse(day);

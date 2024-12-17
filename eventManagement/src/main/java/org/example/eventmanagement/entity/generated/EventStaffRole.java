@@ -44,7 +44,7 @@ public class EventStaffRole {
 
     protected long id;
     @XmlElement(required = true)
-    protected String name;
+    protected Skill skill;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -70,8 +70,8 @@ public class EventStaffRole {
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public Skill getSkill() {
+        return skill;
     }
 
     /**
@@ -82,8 +82,8 @@ public class EventStaffRole {
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setName(Skill value) {
+        this.skill = value;
     }
 
 }
