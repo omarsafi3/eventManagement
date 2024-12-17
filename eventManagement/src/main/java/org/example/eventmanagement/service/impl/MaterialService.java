@@ -107,4 +107,56 @@ public class MaterialService {
 
         return materials;
     }
+
+    public int findMaxAvailableQuantity(String materialId, String startTime, String endTime, String day) throws ParseException {
+        if (materialId == null || startTime == null || endTime == null || day == null) {
+            throw new IllegalArgumentException("Invalid input parameters");
+        }
+
+        LocalTime startLocalTime = LocalTime.parse(startTime);
+        LocalTime endLocalTime = LocalTime.parse(endTime);
+
+        if (startLocalTime.isAfter(endLocalTime)) {
+            throw new IllegalArgumentException("Invalid time range");
+        }
+
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZonedDateTime startZonedDateTime = startLocalTime.atDate(LocalDate.parse(day)).atZone(zoneId);
+        ZonedDateTime endZonedDateTime = endLocalTime.atDate(LocalDate.parse(day)).atZone(zoneId);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = dateFormat.parse(day);
+
+        Material material = allMaterials().stream()
+                .filter(m -> m.getId() == Long.parseLong(materialId))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Material not found"));
+
+        int totalQuantity = material.getQuantity();
+        int reservedQuantity = 0;
+
+        List<Event> eventList = eventService.allEvents();
+
+        for (Event event : eventList) {
+            LocalTime eventStart = LocalTime.parse(event.getStartTime());
+            LocalTime eventEnd = LocalTime.parse(event.getFinishTime());
+
+            if (event.getDate().equals(date)) {
+                boolean hasOverlap = !(endZonedDateTime.toLocalTime().isBefore(eventStart) || startZonedDateTime.toLocalTime().isAfter(eventEnd));
+
+                if (hasOverlap) {
+                    List<EventMaterial> eventMaterials = event.getEventMaterialWrapper().getEventMaterial();
+                    for (EventMaterial eventMaterial : eventMaterials) {
+                        if (eventMaterial.getMaterial().getId() == Long.parseLong(materialId)) {
+                            reservedQuantity += eventMaterial.getQuantityUsed();
+                        }
+                    }
+                }
+            }
+        }
+
+        int availableQuantity = totalQuantity - reservedQuantity;
+        return Math.max(availableQuantity, 0);
+    }
+
+
 }

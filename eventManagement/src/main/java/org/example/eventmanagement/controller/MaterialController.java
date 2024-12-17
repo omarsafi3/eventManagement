@@ -98,4 +98,19 @@ public class MaterialController {
 
         return new ResponseEntity<>(availableMaterials, HttpStatus.OK);
     }
+
+    @GetMapping("/maxAvailableQuantity")
+    public ResponseEntity<Integer> getMaxAvailableQuantity(@RequestParam String materialId,
+                                                           @RequestParam String startTime,
+                                                           @RequestParam String endTime,
+                                                           @RequestParam String day) {
+        try {
+            int maxAvailableQuantity = materialService.findMaxAvailableQuantity(materialId, startTime, endTime, day);
+            return ResponseEntity.ok(maxAvailableQuantity);
+        } catch (ParseException e) {
+            return ResponseEntity.badRequest().body(-1);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(-1);
+        }
+    }
 }

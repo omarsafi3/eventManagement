@@ -30,13 +30,13 @@ public class RefreshTokenService {
     }
 
     public RefreshToken createRefreshToken(Long userId) {
-        // Ensure user exists before creating a token
+
         var user = userRepository.findById(userId);
 
-        // Delete any existing tokens for this user
+
         refreshTokenRepository.deleteByUserId(user.getId());
 
-        // Create a new refresh token
+
         RefreshToken refreshToken = new RefreshToken();
         refreshToken.setUserId(user.getId());
         refreshToken.setExpiryDate(Instant.now().plusMillis(refreshTokenDurationMs));

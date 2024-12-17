@@ -76,7 +76,7 @@ public class UserRepository {
 
 
     public void save(User user) {
-        List<User> users = findAll();  // Should never return null due to above changes
+        List<User> users = findAll();
         if (users == null) {
             users = new ArrayList<>();
         }

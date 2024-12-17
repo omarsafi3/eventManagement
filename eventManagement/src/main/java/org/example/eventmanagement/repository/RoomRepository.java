@@ -131,7 +131,7 @@ public class RoomRepository {
             this.rooms = rooms;
         }
 
-        @XmlElement(name = "room") // Match individual item names in XML
+        @XmlElement(name = "room")
         public List<Room> getRooms() {
             return rooms;
         }
