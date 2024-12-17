@@ -42,4 +42,11 @@
         <roles>USER</roles>
         <totalPaid>0.0</totalPaid>
     </participant>
+    <participant id="7">
+        <email>test@gmail.com</email>
+        <fullName>test</fullName>
+        <password>test</password>
+        <roles>USER</roles>
+        <totalPaid>0.0</totalPaid>
+    </participant>
 </participants>

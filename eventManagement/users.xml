@@ -28,4 +28,10 @@
         <password>$2a$10$G4ora30wziPESeu/y5BxY.gaflKGSw1XG23ErIk86bGMIzdmH4n7u</password>
         <roles>USER</roles>
     </user>
+    <user id="13">
+        <email>test@gmail.com</email>
+        <fullName>test</fullName>
+        <password>$2a$10$zO7pnNh1pvfPI/vQiB8CSuMTJoJXYpiyybvUzgU.ZorNtry8.2Jda</password>
+        <roles>USER</roles>
+    </user>
 </userListWrapper>

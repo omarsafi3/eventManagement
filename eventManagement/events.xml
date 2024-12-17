@@ -23,27 +23,20 @@
         <registrationWrapper>
             <registration>
                 <id>0</id>
-                <participant id="3">
-                    <email>john.doe@example.com</email>
+                <participant id="13">
+                    <email>test@gmail.com</email>
                     <totalPaid>0.0</totalPaid>
                 </participant>
-                <amountPaid>100.0</amountPaid>
+                <amountPaid>0.0</amountPaid>
             </registration>
             <registration>
                 <id>0</id>
-                <participant id="2">
-                    <email>john.doe@example.com</email>
+                <participant id="13">
+                    <email>test@gmail.com</email>
+                    <fullName>test</fullName>
                     <totalPaid>0.0</totalPaid>
                 </participant>
-                <amountPaid>100.0</amountPaid>
-            </registration>
-            <registration>
-                <id>0</id>
-                <participant id="5">
-                    <email>john.doe@example.com</email>
-                    <totalPaid>0.0</totalPaid>
-                </participant>
-                <amountPaid>100.0</amountPaid>
+                <amountPaid>0.0</amountPaid>
             </registration>
         </registrationWrapper>
         <eventStaffWrapper/>
