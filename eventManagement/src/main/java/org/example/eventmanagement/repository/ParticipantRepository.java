@@ -27,7 +27,7 @@ public class ParticipantRepository {
             this.file = new File(FILE_PATH);
             this.context = JAXBContext.newInstance(ParticipantListWrapper.class);
 
-            // Initialize the file if it doesn't exist
+
             if (!file.exists()) {
                 saveAll(new ArrayList<>());
             }

@@ -25,7 +25,6 @@ public class UserRepository {
             this.file = new File(FILE_PATH);
             this.context = JAXBContext.newInstance(UserListWrapper.class);
 
-            // Initialize the file if it doesn't exist
             if (!file.exists()) {
                 saveAll(new ArrayList<>());
             }

@@ -53,37 +53,37 @@ public class EventService {
 
 
     public void registerParticipant(long eventId, RegistrationRequest registrationRequest) {
-        // Fetch the event from the repository
+
         Event event = findById(eventId);
 
-        // Validate and set Participant
+
         if (registrationRequest.getParticipant() == null) {
             throw new IllegalArgumentException("Participant must be provided");
         }
 
-        // Create a new Registration
+
         Registration registration = new Registration();
         registration.setParticipant(registrationRequest.getParticipant());
         registration.setAmountPaid(registrationRequest.getAmountPaid());
 
-        // Ensure RegistrationWrapper exists
+
         RegistrationWrapper registrationWrapper = event.getRegistrationWrapper();
         if (registrationWrapper == null) {
             registrationWrapper = new RegistrationWrapper();
             event.setRegistrationWrapper(registrationWrapper);
         }
 
-        // Add the registration to the wrapper
+
         List<Registration> registrationList = registrationWrapper.getRegistration();
         if (registrationList == null) {
             registrationList = new ArrayList<>();
             registrationWrapper.setRegistration(registrationList);
         }
 
-        // Add new registration
+
         registrationList.add(registration);
 
-        // Save the updated event
+
         updateEvent(event);
 
         log.info("Registration added to event. Total registrations: {}",

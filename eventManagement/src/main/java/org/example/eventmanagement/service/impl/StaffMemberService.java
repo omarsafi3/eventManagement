@@ -19,7 +19,6 @@ public class StaffMemberService {
     }
 
     public StaffMember addStaffMember(StaffMember staffMember) {
-        // Assuming some logic to handle password encoding or other transformations if needed
         repository.save(staffMember);
         return staffMember;
     }

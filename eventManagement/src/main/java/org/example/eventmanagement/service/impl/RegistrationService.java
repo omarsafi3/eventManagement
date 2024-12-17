@@ -47,19 +47,18 @@ public class RegistrationService {
             throw new RuntimeException("Event not found for ID: " + eventId);
         }
 
-        // Create a new Registration
+
         Registration registration = new Registration();
         registration.setParticipant(participant);
         registration.setAmountPaid(amountPaid);
 
-        // Add the registration to the event's RegistrationWrapper
+
         if (event.getRegistrationWrapper() == null) {
             event.setRegistrationWrapper(new RegistrationWrapper());
         }
         event.getRegistrationWrapper().addRegistration(registration);
 
 
-        // Save the registration and the updated event
         registrationRepository.save(registration);
         eventRepository.save(event);
     }

@@ -23,7 +23,7 @@ public class MaterialRepository {
             this.file = new File(FILE_PATH);
             this.context = JAXBContext.newInstance(MaterialListWrapper.class);
 
-            // Initialize the file if it doesn't exist
+
             if (!file.exists()) {
                 saveAll(new ArrayList<>());
             }
@@ -113,7 +113,7 @@ public class MaterialRepository {
         saveAll(materials);
     }
 
-    // Wrapper class for marshalling and unmarshalling
+
     @XmlRootElement(name = "materials")
     private static class MaterialListWrapper {
         private List<Material> materials;
@@ -125,7 +125,7 @@ public class MaterialRepository {
             this.materials = materials;
         }
 
-        @XmlElement(name = "material") // Match individual item names in XML
+        @XmlElement(name = "material")
         public List<Material> getMaterials() {
             return materials;
         }

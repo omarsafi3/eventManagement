@@ -26,18 +26,18 @@ public class RoomService {
     @Autowired
     private EventService eventService;
 
-    // Create a new room
+
     public void createRoom(Room room) {
 
         roomRepository.save(room);
     }
 
-    // Retrieve all rooms
+
     public List<Room> getAllRooms() {
         return roomRepository.findAll();
     }
 
-    // Retrieve a room by its ID
+
     public Room getRoomById(Long id) {
         Room room = roomRepository.findById(id);
         if (room == null) {
@@ -46,7 +46,7 @@ public class RoomService {
         return room;
     }
 
-    // Retrieve a room by its name
+
     public Room getRoomByName(String name) {
         Room room = roomRepository.findByName(name);
         if (room == null) {
@@ -89,7 +89,7 @@ public class RoomService {
             throw new IllegalArgumentException("Invalid time range");
         }
 
-        // Parse startTime and endTime as LocalTime (for local time zone handling)
+
         LocalTime startLocalTime = LocalTime.parse(startTime);
         LocalTime endLocalTime = LocalTime.parse(endTime);
 
@@ -97,32 +97,28 @@ public class RoomService {
             throw new IllegalArgumentException("Invalid time range");
         }
 
-        // Convert to ZonedDateTime to adjust for local time zone (e.g., system default zone)
+
         ZoneId zoneId = ZoneId.systemDefault();  // You can use a specific zone if needed
         ZonedDateTime startZonedDateTime = startLocalTime.atDate(LocalDate.parse(day)).atZone(zoneId);
         ZonedDateTime endZonedDateTime = endLocalTime.atDate(LocalDate.parse(day)).atZone(zoneId);
 
-        // Convert ZonedDateTime back to Time for comparison with event times
         Time start = Time.valueOf(startZonedDateTime.toLocalTime());
         Time end = Time.valueOf(endZonedDateTime.toLocalTime());
 
-        // Parse the day string to Date (already in your code)
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = dateFormat.parse(day);
 
-        // List of all rooms
         List<Room> rooms = getAllRooms();
-        Set<Room> unavailableRooms = new HashSet<>();
 
-        // Check events for availability based on the converted times
-        for (Event event : events) {
+
+         for (Event event : events) {
             LocalTime eventStart = LocalTime.parse(event.getStartTime(), DateTimeFormatter.ISO_LOCAL_TIME);
             LocalTime eventEnd = LocalTime.parse(event.getFinishTime(), DateTimeFormatter.ISO_LOCAL_TIME);
 
             if (event.getDate().equals(date)) {
                 boolean hasOverlap = !(endZonedDateTime.toLocalTime().isBefore(eventStart) || startZonedDateTime.toLocalTime().isAfter(eventEnd));
                 if (hasOverlap) {
-                    unavailableRooms.add(event.getRoom());
+
                     rooms.remove(event.getRoom());
                     System.out.println("I removed " + rooms.toString());
                     System.out.println("Room " + event.getRoom().getName() + " is unavailable for the requested time range");
@@ -130,8 +126,7 @@ public class RoomService {
                 }
             }
         }
-        System.out.println("Unavailable rooms: " + unavailableRooms);
-        //rooms.removeAll(unavailableRooms);
+
         return rooms;
     }
 
