@@ -26,7 +26,7 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
+        // Find the user by email
         User userDetail = repository.findByEmail(username);
         if (userDetail == null) {
             throw new UsernameNotFoundException("User not found with email: " + username);
@@ -51,12 +51,13 @@ public class UserService implements UserDetailsService {
 
 
     public UserDTO convertToDTO(User user) {
-
+        // Map the User fields
         UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setFullName(user.getFullName());
         userDTO.setEmail(user.getEmail());
 
+        // Check if reviews exist, map them to DTOs
 
 
         return userDTO;

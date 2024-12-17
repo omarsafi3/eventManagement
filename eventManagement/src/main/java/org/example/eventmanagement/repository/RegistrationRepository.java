@@ -26,7 +26,7 @@ public class RegistrationRepository {
             this.file = new File(FILE_PATH);
             this.context = JAXBContext.newInstance(RegistrationListWrapper.class);
 
-
+            // Initialize the file if it doesn't exist
             if (!file.exists()) {
                 saveAll(new ArrayList<>());
             }
