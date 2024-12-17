@@ -3,7 +3,7 @@
     <event>
         <id>7</id>
         <title>Annual Corporate Meeting</title>
-        <description>Discussion on the company's progress and future goals.</description>
+        <description>Discussing company's strategies.</description>
         <date>2024-12-15+01:00</date>
         <startTime>09:00</startTime>
         <finishTime>11:00</finishTime>
@@ -20,14 +20,39 @@
             <hourlyRate>100.0</hourlyRate>
             <surface>75.0</surface>
         </room>
-        <registrationWrapper/>
+        <registrationWrapper>
+            <registration>
+                <id>0</id>
+                <participant id="3">
+                    <email>john.doe@example.com</email>
+                    <totalPaid>0.0</totalPaid>
+                </participant>
+                <amountPaid>100.0</amountPaid>
+            </registration>
+            <registration>
+                <id>0</id>
+                <participant id="2">
+                    <email>john.doe@example.com</email>
+                    <totalPaid>0.0</totalPaid>
+                </participant>
+                <amountPaid>100.0</amountPaid>
+            </registration>
+            <registration>
+                <id>0</id>
+                <participant id="5">
+                    <email>john.doe@example.com</email>
+                    <totalPaid>0.0</totalPaid>
+                </participant>
+                <amountPaid>100.0</amountPaid>
+            </registration>
+        </registrationWrapper>
         <eventStaffWrapper/>
         <eventMaterialWrapper/>
     </event>
     <event>
         <id>8</id>
         <title>Team Workshop</title>
-        <description>Team-building activities enhancing collaboration and productivity.</description>
+        <description>Team-building activities.</description>
         <date>2024-12-16+01:00</date>
         <startTime>10:00</startTime>
         <finishTime>13:00</finishTime>
@@ -51,7 +76,7 @@
     <event>
         <id>9</id>
         <title>Tech Conference</title>
-        <description>An exploration of the latest innovations and technologies in the industry.</description>
+        <description>Exploring latest technologies. </description>
         <date>2024-12-17+01:00</date>
         <startTime>08:00</startTime>
         <finishTime>17:00</finishTime>
@@ -71,120 +96,5 @@
         <registrationWrapper/>
         <eventStaffWrapper/>
         <eventMaterialWrapper/>
-    </event>
-    <event>
-        <id>10</id>
-        <title>ezae</title>
-        <description>ezae</description>
-        <date>2024-12-11+01:00</date>
-        <startTime>02:39</startTime>
-        <finishTime>03:39</finishTime>
-        <category>
-            <id>1</id>
-            <name></name>
-        </category>
-        <client>
-            <id>2</id>
-            <phoneNumber>0</phoneNumber>
-        </client>
-        <room>
-            <id>2</id>
-            <name></name>
-            <capacity>0</capacity>
-            <hourlyRate>0.0</hourlyRate>
-            <surface>0.0</surface>
-        </room>
-    </event>
-    <event>
-        <id>11</id>
-        <title>eza</title>
-        <description>ezaeza</description>
-        <date>2024-12-22+01:00</date>
-        <startTime>03:43</startTime>
-        <finishTime>05:43</finishTime>
-        <category>
-            <id>1</id>
-            <name></name>
-        </category>
-        <client>
-            <id>1</id>
-            <phoneNumber>0</phoneNumber>
-        </client>
-        <room>
-            <id>1</id>
-            <name></name>
-            <capacity>0</capacity>
-            <hourlyRate>0.0</hourlyRate>
-            <surface>0.0</surface>
-        </room>
-    </event>
-    <event>
-        <id>12</id>
-        <title>eazezaea</title>
-        <description>eazeza</description>
-        <date>2024-12-29+01:00</date>
-        <startTime>01:45</startTime>
-        <finishTime>05:45</finishTime>
-        <category>
-            <id>2</id>
-            <name>Team Workshop</name>
-        </category>
-        <client>
-            <id>1</id>
-            <phoneNumber>0</phoneNumber>
-        </client>
-        <room>
-            <id>2</id>
-            <name></name>
-            <capacity>0</capacity>
-            <hourlyRate>0.0</hourlyRate>
-            <surface>0.0</surface>
-        </room>
-    </event>
-    <event>
-        <id>13</id>
-        <title>eee</title>
-        <description>eee</description>
-        <date>2024-12-05+01:00</date>
-        <startTime>00:48</startTime>
-        <finishTime>04:46</finishTime>
-        <category>
-            <id>1</id>
-            <name>Corporate Meeting</name>
-        </category>
-        <client>
-            <id>2</id>
-            <phoneNumber>0</phoneNumber>
-        </client>
-        <room>
-            <id>2</id>
-            <name></name>
-            <capacity>0</capacity>
-            <hourlyRate>0.0</hourlyRate>
-            <surface>0.0</surface>
-        </room>
-    </event>
-    <event>
-        <id>14</id>
-        <title>rara</title>
-        <description>rara</description>
-        <date>2024-12-12+01:00</date>
-        <startTime>02:49</startTime>
-        <finishTime>04:49</finishTime>
-        <category>
-            <id>1</id>
-            <name>Corporate Meeting</name>
-        </category>
-        <client>
-            <id>1</id>
-            <phoneNumber>0</phoneNumber>
-        </client>
-        <room>
-            <id>2</id>
-            <name>Ahla Meeting Room</name>
-            <capacity>13</capacity>
-            <hourlyRate>12.0</hourlyRate>
-            <surface>18.0</surface>
-        </room>
     </event>
 </events>

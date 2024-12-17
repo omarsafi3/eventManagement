@@ -4,13 +4,10 @@ import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import jakarta.xml.bind.annotation.XmlTransient;
-import lombok.Getter;
-import lombok.Setter;
 import org.example.eventmanagement.config.DateAdapter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -23,13 +20,13 @@ public class User implements UserDetails {
     private String password;
     private String roles;
 
-    // Use JAXB Date adapter to handle Date formatting
+
     private Date createdAt;
     private Date updatedAt;
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    // Constructor with fields
+
     public User(String email, String password, String roles) {
         this.email = email;
         this.password = password;

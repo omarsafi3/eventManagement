@@ -13,22 +13,16 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/api/v1/material")
 public class MaterialController {
-
-    private final MaterialService materialService;
-
     @Autowired
-    public MaterialController(MaterialService materialService) {
-        this.materialService = materialService;
-    }
+    private  MaterialService materialService;
 
-    // Get all materials
     @GetMapping
     public ResponseEntity<List<Material>> getAllMaterials() {
         List<Material> materials = materialService.allMaterials();
         return new ResponseEntity<>(materials, HttpStatus.OK);
     }
 
-    // Get material by ID
+
     @GetMapping("/{id}")
     public ResponseEntity<Material> getMaterialById(@PathVariable long id) {
         try {
@@ -39,7 +33,7 @@ public class MaterialController {
         }
     }
 
-    // Get material by Name
+
     @GetMapping("/name/{name}")
     public ResponseEntity<Material> getMaterialByName(@PathVariable String name) {
         try {
@@ -50,21 +44,18 @@ public class MaterialController {
         }
     }
 
-    // Search materials by keyword in the name
     @GetMapping("/search")
     public ResponseEntity<List<Material>> searchMaterialsByName(@RequestParam String keyword) {
         List<Material> materials = materialService.findByNameContaining(keyword);
         return new ResponseEntity<>(materials, HttpStatus.OK);
     }
 
-    // Create a new material
     @PostMapping
     public ResponseEntity<Material> createMaterial(@RequestBody Material material) {
         materialService.addMaterial(material);
         return new ResponseEntity<>(material, HttpStatus.CREATED);
     }
 
-    // Update an existing material
     @PutMapping("/{id}")
     public ResponseEntity<Material> updateMaterial(@PathVariable long id, @RequestBody Material material) {
         material.setId(id);
@@ -76,7 +67,6 @@ public class MaterialController {
         }
     }
 
-    // Delete material by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteMaterialById(@PathVariable long id) {
         try {
@@ -87,7 +77,6 @@ public class MaterialController {
         }
     }
 
-    // Delete material by Name
     @DeleteMapping("/name/{name}")
     public ResponseEntity<Void> deleteMaterialByName(@PathVariable String name) {
         try {

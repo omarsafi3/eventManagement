@@ -1,5 +1,6 @@
 package org.example.eventmanagement.controller;
 
+import org.example.eventmanagement.entity.generated.Participant;
 import org.example.eventmanagement.entity.generated.Registration;
 import org.example.eventmanagement.service.impl.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +21,14 @@ public class RegistrationController {
         this.registrationService = registrationService;
     }
 
-    // Get all registrations
+
     @GetMapping
     public ResponseEntity<List<Registration>> getAllRegistrations() {
         List<Registration> registrations = registrationService.getAllRegistrations();
         return new ResponseEntity<>(registrations, HttpStatus.OK);
     }
 
-    // Get a registration by ID
+
     @GetMapping("/{id}")
     public ResponseEntity<Registration> getRegistrationById(@PathVariable long id) {
         Registration registration = registrationService.getRegistrationById(id);
@@ -36,15 +37,23 @@ public class RegistrationController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+    @PostMapping("/register")
+    public ResponseEntity<String> registerParticipant(
+            @RequestParam Long eventId,
+            @RequestParam Participant p,
+            @RequestParam double amountPaid) {
 
-    // Create a new registration
+        registrationService.registerParticipant(eventId, p, amountPaid);
+        return ResponseEntity.ok("Participant registered successfully!");
+    }
+
     @PostMapping
     public ResponseEntity<Registration> createRegistration(@RequestBody Registration registration) {
         Registration createdRegistration = registrationService.createRegistration(registration);
         return new ResponseEntity<>(createdRegistration, HttpStatus.CREATED);
     }
 
-    // Update an existing registration
+
     @PutMapping("/{id}")
     public ResponseEntity<Registration> updateRegistration(
             @PathVariable long id,
@@ -57,7 +66,7 @@ public class RegistrationController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    // Delete a registration by ID
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRegistration(@PathVariable long id) {
         Registration existingRegistration = registrationService.getRegistrationById(id);

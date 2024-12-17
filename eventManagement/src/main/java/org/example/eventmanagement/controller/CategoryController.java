@@ -21,14 +21,14 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    // Get all categories
+
     @GetMapping
     public ResponseEntity<List<Category>> getAllCategories() {
         List<Category> categories = categoryService.getAllCategories();
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 
-    // Get category by ID
+
     @GetMapping("/{id}")
     public ResponseEntity<Category> getCategoryById(@PathVariable long id) {
         try {
@@ -39,7 +39,6 @@ public class CategoryController {
         }
     }
 
-    // Get category by Name
     @GetMapping("/name/{name}")
     public ResponseEntity<Category> getCategoryByName(@PathVariable String name) {
         try {
@@ -50,21 +49,19 @@ public class CategoryController {
         }
     }
 
-    // Search categories by keyword in the name
+
     @GetMapping("/search")
     public ResponseEntity<List<Category>> searchCategoriesByName(@RequestParam String keyword) {
         List<Category> categories = categoryService.searchCategoriesByName(keyword);
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 
-    // Create a new category
     @PostMapping
     public ResponseEntity<Category> createCategory(@RequestBody Category category) {
         Category createdCategory = categoryService.createCategory(category);
         return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
     }
 
-    // Update an existing category
     @PutMapping("/{id}")
     public ResponseEntity<Category> updateCategory(@PathVariable long id, @RequestBody Category category) {
         category.setId(id);
@@ -76,7 +73,6 @@ public class CategoryController {
         }
     }
 
-    // Delete category by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCategoryById(@PathVariable long id) {
         try {
@@ -87,7 +83,6 @@ public class CategoryController {
         }
     }
 
-    // Delete category by Name
     @DeleteMapping("/name/{name}")
     public ResponseEntity<Void> deleteCategoryByName(@PathVariable String name) {
         try {

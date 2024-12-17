@@ -45,7 +45,7 @@ public class RegistrationRepository {
         }
     }
 
-    private void save(Registration registration) {
+    public void save(Registration registration) {
         List<Registration> registrations = findAll();
         if (registrations == null) {
             registrations = new ArrayList<>();

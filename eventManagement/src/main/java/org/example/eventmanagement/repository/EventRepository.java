@@ -42,18 +42,34 @@ public class EventRepository {
         }
     }
 
-    public void save(Event event) {
+    public Event save(Event event) {
         List<Event> events = findAll();
         if (events == null) {
             events = new ArrayList<>();
         }
-        long maxId = events.stream()
-                .mapToLong(Event::getId)
-                .max()
-                .orElse(0);
-        event.setId(maxId + 1);
-        events.add(event);
+
+        // Find existing event by ID
+        Event existingEvent = events.stream()
+                .filter(e -> e.getId() == event.getId())
+                .findFirst()
+                .orElse(null);
+
+        if (existingEvent != null) {
+            // Replace existing event with the new one
+            int index = events.indexOf(existingEvent);
+            events.set(index, event);
+        } else {
+            // If no existing event, generate new ID and add
+            long maxId = events.stream()
+                    .mapToLong(Event::getId)
+                    .max()
+                    .orElse(0);
+            event.setId(maxId + 1);
+            events.add(event);
+        }
+
         saveAll(events);
+        return event;
     }
 
     public List<Event> findAll() {

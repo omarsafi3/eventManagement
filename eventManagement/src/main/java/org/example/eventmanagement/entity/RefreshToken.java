@@ -21,7 +21,7 @@ public class RefreshToken {
     private long id;
 
     @XmlElement(name = "userId")
-    private long userId; // Reference to User by ID instead of embedding User object
+    private long userId;
 
     @XmlElement(name = "Token")
     private String token;

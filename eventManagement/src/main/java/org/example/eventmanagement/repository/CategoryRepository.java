@@ -113,7 +113,6 @@ public class CategoryRepository {
         saveAll(categories);
     }
 
-    // Wrapper class for marshalling and unmarshalling
     @XmlRootElement(name = "categories")
     private static class CategoryListWrapper {
         private List<Category> categories;
@@ -125,7 +124,7 @@ public class CategoryRepository {
             this.categories = categories;
         }
 
-        @XmlElement(name = "category") // Match individual item names in XML
+        @XmlElement(name = "category")
         public List<Category> getCategories() {
             return categories;
         }

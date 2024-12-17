@@ -21,14 +21,14 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    // Get all clients
+
     @GetMapping
     public ResponseEntity<List<Client>> getAllClients() {
         List<Client> clients = clientService.getAllClients();
         return new ResponseEntity<>(clients, HttpStatus.OK);
     }
 
-    // Get client by ID
+
     @GetMapping("/{id}")
     public ResponseEntity<Client> getClientById(@PathVariable long id) {
         try {
@@ -39,7 +39,7 @@ public class ClientController {
         }
     }
 
-    // Get client by Name
+
     @GetMapping("/name/{name}")
     public ResponseEntity<Client> getClientByName(@PathVariable String name) {
         try {
@@ -50,21 +50,21 @@ public class ClientController {
         }
     }
 
-    // Search clients by keyword in name
+
     @GetMapping("/search")
     public ResponseEntity<List<Client>> searchClientsByName(@RequestParam String keyword) {
         List<Client> clients = clientService.searchClientsByName(keyword);
         return new ResponseEntity<>(clients, HttpStatus.OK);
     }
 
-    // Create a new client
+
     @PostMapping
     public ResponseEntity<Client> createClient(@RequestBody Client client) {
         clientService.createClient(client);
         return new ResponseEntity<>(client, HttpStatus.CREATED);
     }
 
-    // Update an existing client
+
     @PutMapping("/{id}")
     public ResponseEntity<Client> updateClient(@PathVariable long id, @RequestBody Client client) {
         client.setId(id);
@@ -76,7 +76,7 @@ public class ClientController {
         }
     }
 
-    // Delete client by ID
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteClientById(@PathVariable long id) {
         try {

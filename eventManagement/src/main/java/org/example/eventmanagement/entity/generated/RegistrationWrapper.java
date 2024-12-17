@@ -73,5 +73,11 @@ public class RegistrationWrapper {
         }
         return this.registration;
     }
+    public void addRegistration(Registration registration) {
+        this.registration.add(registration);
+    }
 
+    public void setRegistration(List<Registration> registration) {
+        this.registration = registration;
+    }
 }

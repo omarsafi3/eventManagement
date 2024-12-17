@@ -101,6 +101,7 @@ public class Event {
     protected Client client;
     @XmlElement(required = true)
     protected Room room;
+    @XmlElement(name = "registrationWrapper")
     protected RegistrationWrapper registrationWrapper;
     protected EventStaffWrapper eventStaffWrapper;
     protected EventMaterialWrapper eventMaterialWrapper;

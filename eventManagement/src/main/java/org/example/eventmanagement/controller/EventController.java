@@ -1,6 +1,7 @@
 package org.example.eventmanagement.controller;
 
 import org.example.eventmanagement.entity.generated.Event;
+import org.example.eventmanagement.security.RegistrationRequest;
 import org.example.eventmanagement.service.impl.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,6 +32,15 @@ public class EventController {
     public ResponseEntity<Void> deleteEvent(@PathVariable Long id) {
         eventService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    @PostMapping("/{eventId}/register")
+    public ResponseEntity<?> registerParticipant(@PathVariable Long eventId, @RequestBody RegistrationRequest registrationRequest) {
+        try {
+            eventService.registerParticipant(eventId, registrationRequest);
+            return ResponseEntity.status(HttpStatus.CREATED).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
     }
 
 }

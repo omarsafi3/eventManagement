@@ -12,5 +12,5 @@ public class StaffMemberDTO {
     private long id;
     private String fullName;
     private String email;
-    private String roles; // You can expand this to be a list if you store multiple roles
+    private String roles;
 }

@@ -69,17 +69,17 @@ public class AuthController {
 
         RefreshToken refreshToken = refreshTokenService.findByToken(requestRefreshToken);
 
-        // Check if refreshToken is null
+
         if (refreshToken == null) {
             throw new TokenRefreshException(requestRefreshToken, "Missing refresh token in database. Please make a new signin request");
         }
 
-        // Verify expiration of the token (you can adjust logic to handle null cases if needed)
+
         if (refreshTokenService.verifyExpiration(refreshToken) == null) {
             throw new TokenRefreshException(requestRefreshToken, "Token expired.");
         }
 
-        // Get user ID and find user by ID
+
         long userId = refreshToken.getUserId();
         User user = service.findById(userId);
 
@@ -87,7 +87,7 @@ public class AuthController {
             throw new TokenRefreshException(requestRefreshToken, "User not found.");
         }
 
-        // Generate a new token and send response
+
         String token = jwtService.generateToken(user.getEmail());
         Date expiresIn = jwtService.extractExpiration(token);
         AuthResponse authResponse = new AuthResponse(token, expiresIn, requestRefreshToken);
