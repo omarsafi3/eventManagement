@@ -117,19 +117,20 @@ public class StaffMemberService {
         List<Event> eventList = eventService.allEvents();
 
         for (Event event : eventList) {
-            LocalTime assignmentStart = LocalTime.parse(event.getStartTime(), DateTimeFormatter.ISO_LOCAL_TIME);
-            LocalTime assignmentEnd = LocalTime.parse(event.getFinishTime(), DateTimeFormatter.ISO_LOCAL_TIME);
-
             if (event.getDate().equals(date)) {
-                boolean hasOverlap = !(endZonedDateTime.toLocalTime().isBefore(assignmentStart) || startZonedDateTime.toLocalTime().isAfter(assignmentEnd));
-                if (hasOverlap) {
-                    staffMembers.removeAll(event.getEventStaffWrapper().getEventStaff().stream()
-                            .map(EventStaff::getStaffMember)
-                            .collect(Collectors.toList()));
+                for (EventStaff eventStaff : event.getEventStaffWrapper().getEventStaff()) {
+                    LocalTime assignmentStart = LocalTime.parse(eventStaff.getStartTime(), DateTimeFormatter.ISO_LOCAL_TIME);
+                    LocalTime assignmentEnd = LocalTime.parse(eventStaff.getFinishTime(), DateTimeFormatter.ISO_LOCAL_TIME);
+
+                    boolean hasOverlap = !(endZonedDateTime.toLocalTime().isBefore(assignmentStart) || startZonedDateTime.toLocalTime().isAfter(assignmentEnd));
+                    if (hasOverlap) {
+                        staffMembers.remove(eventStaff.getStaffMember());
+                    }
                 }
             }
         }
 
         return staffMembers;
     }
+
 }

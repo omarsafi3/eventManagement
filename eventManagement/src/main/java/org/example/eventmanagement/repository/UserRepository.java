@@ -111,21 +111,21 @@ public class UserRepository {
 
     private void saveAll(List<User> users) {
         try {
-            // If users is null, initialize it to an empty list
+
             if (users == null) {
                 users = new ArrayList<>();
             }
 
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            // Marshal the list into the XML file
+
             marshaller.marshal(new UserListWrapper(users), file);
         } catch (JAXBException e) {
             throw new RuntimeException("Error saving users to XML", e);
         }
     }
 
-    // Wrapper class for marshalling and unmarshalling
+
     @XmlRootElement
     private static class UserListWrapper {
         private List<User> users;
